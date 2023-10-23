@@ -1,6 +1,6 @@
 <?php
 
-  define ('SERVEUR_BD','192.168.135.113');
+  define ('SERVEUR_BD','localhost');
   // pour mmi-agences, remplacez 'root' par votre login
   define ('LOGIN_BD','root');
   // Pour MAMP, remplacez '' par 'root'
