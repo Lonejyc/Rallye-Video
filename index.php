@@ -17,7 +17,7 @@
 
     <body>
         <main>
-            <?php include("Global/header.html") ?>
+            <?php include("Global/header.php") ?>
             <div>
                 <p>Le Rallye Vidéo commence dans</p>
                 <img src="images/animhorloge.svg">
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <p>Annimation Bannière à faire</p>
-            <?php include("Global/footer.html") ?>
+            <?php include("Global/footer.php") ?>
         </main>
     </body>
 

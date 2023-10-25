@@ -8,5 +8,9 @@
         <li><h2>Vote</h2></li>
     </ul>
     <h2>Live</h2>
-    <h2>Connexion</h2>
+    <?php if (isset($_SESSION['user_id'])) {
+        echo "<a href='deconnexion.php'><h2>Déconnexion</h2></a>";
+    } else {
+        echo "<a href='inscription.php'><h2>Connexion</h2></a>";
+    } ?>
 </header>

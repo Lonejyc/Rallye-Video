@@ -63,7 +63,7 @@ if(isset($_POST['action'])) {
                         $erreur = "Mot de passe incorrect";
                     }
                 } else {
-                    $erreur = "Utilisateur non trouvé";
+                    $erreur = "Utilisateur introuvable";
                 }
             } else {
                 echo "Erreur : " . mysqli_error($connect);
@@ -80,11 +80,11 @@ if(isset($_POST['action'])) {
 <html>
     <head>
         <link href="css/style.css" rel="stylesheet">
-        <title>Dixnez +</title>
+        <title>Rallye Video</title>
     </head>
     <body>
         <main>
-            <?php include("Global/header.html") ?>
+            <?php include("Global/header.php") ?>
             <div class="wrap">
             <?php if(isset($succes)) {?>
                 <span class="succes"><?php echo $succes ?></span>
@@ -107,7 +107,7 @@ if(isset($_POST['action'])) {
                     <h2>Hello World !</h2>
                 </div>
             </div>
-            <?php include("Global/footer.html") ?>
+            <?php include("Global/footer.php") ?>
         </main>
     </body>
 </html>
