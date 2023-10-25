@@ -46,24 +46,45 @@
                 ?>
             </div>
             <div class="Inscription">
+            <div>
                 <div>
                     <p>Inscription dans une équipe</p>
                     <form method="POST">
                         <?php
-                        $request = "SELECT * FROM rv_team";
-                        $noms = mysqli_query($CONNEXION, $request);
+                        // Vérifier si l'utilisateur est connecté (assumons que vous avez une session utilisateur)
+                        if if (isset($_SESSION['user_id'])) {
+                            $user_id = $_SESSION['user_id'];
+
+                            // Traitement du formulaire lorsqu'il est soumis
+                            if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
+                                // Récupérer l'ID de l'équipe sélectionnée
+                                $equipe_id = $_POST['equipe'];
+
+                                // Ajouter l'utilisateur à l'équipe dans la base de données
+                                $request = "INSERT INTO rv_user (rv_team_id) VALUES ($equipe_id) WHERE id = $user_id";
+                                mysqli_query($CONNEXION, $request);
+                                echo "Vous avez été inscrit dans l'équipe avec succès.";
+                            }
+                        } else {
+                            echo "Connectez-vous pour vous inscrire dans une équipe.";
+                        }
                         ?>
                         <div id="equipe-select">
-                            <select id="id" required>
-                                <option value="" disabled selected></option>
-                                <?php while ($nom = mysqli_fetch_assoc($noms)): ?>
-                                    <option value="<?php echo $nom['id'] ?>"><?php echo $nom['Nom_equipe']; ?></option>
-                                <?php endwhile; ?>
+                            <select name="equipe" id="equipe" required>
+                                <option value="" disabled selected>Sélectionnez une équipe</option>
+                                <?php
+                                $request = "SELECT id, Nom_equipe FROM rv_team";
+                                $equipes = mysqli_query($CONNEXION, $request);
+
+                                while ($equipe = mysqli_fetch_assoc($equipes)) {
+                                    echo "<option value='" . $equipe['id'] . "'>" . $equipe['Nom_equipe'] . "</option>";
+                                }
+                                ?>
                             </select>
                         </div>
                         <br>
                         <button type="submit" name="action" value="confirmation">OK</button>
-                        <p>L'équipe n'existe pas encore ? Inscris-la maintenant !</p>
+                        <p>L'équipe n'existe pas encore ? Inscrivez-la maintenant !</p>
                     </form>
                 </div>
                 <div>
