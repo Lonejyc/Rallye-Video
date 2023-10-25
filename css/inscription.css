@@ -34,6 +34,10 @@
     margin-bottom: 80px;
 }
 
+.card .inscr h2 {
+    margin-bottom: 28px;
+}
+
 .card input {
     width: 350px;
     height: 50px;
@@ -49,6 +53,10 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 300;
+}
+
+.card .inscr input {
+    margin: 0px auto 20px;
 }
 
 
@@ -69,13 +77,22 @@
     align-items: center;
     margin-inline: auto;
     padding: 10px 18px;
-    margin-top: 12px;
-    margin-bottom: 57px;
+    margin-top: 92px;
+    margin-bottom: 27px;
     color: var(--Blanc, #FFF);
     font-family: Gotham;
     font-size: 32px;
     font-weight: 700;
     cursor: pointer;
+}
+
+.card .inscr .submit {
+    margin-top: 47px;
+}
+
+.card .submit:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-out;
 }
 
 .card .infos {
@@ -87,6 +104,7 @@
     font-size: 15px;
     font-weight: 350;
     gap: 20px;
+    margin-bottom: 55px;
 }
 
 .card .infos .change {
@@ -104,5 +122,6 @@
 }
 
 .inscr {
+    background: var(--Noir, #1D1D1B);
     transform: rotateY(180deg);
 }

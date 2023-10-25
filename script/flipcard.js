@@ -6,9 +6,14 @@ document.querySelectorAll('.container').forEach((objectEl) => {;
     btnElements.forEach((btnEl) => {
         btnEl.addEventListener('click', () => {
             
-            if(btnEl.classList.contains('change')) {
-               cardEl.style.transform = "rotateY(180deg)";
+            if(btnEl.classList.contains('normal')) {
+                cardEl.style.transform = "rotateY(180deg)";
+                console.log('change');
             }
+            if(btnEl.classList.contains('reverse')) {
+                cardEl.style.transform = "rotateY(0deg)";
+                console.log('reverse');
+             }
         });
     }
 )});

@@ -109,7 +109,7 @@ if(isset($_POST['action'])) {
                             </form>
                             <div class="infos">
                                 <p>Nouveau ici ?</p>
-                                <button class="change">S'inscrire</button>
+                                <button class="change normal">S'inscrire</button>
                             </div>
                         </div>
                         <div class="inscr">
@@ -119,8 +119,12 @@ if(isset($_POST['action'])) {
                                 <input type="text" name="prenom" placeholder="Prénom" required>
                                 <input type="text" name="mail" placeholder="Mail" required>
                                 <input type="password" name="password" placeholder="Mot de Passe" minlength="8" required>
-                                <button type="submit" name="action" value="inscription">S'inscrire</button>
+                                <button type="submit" name="action" value="inscription" class="submit">S'inscrire</button>
                             </form>
+                            <div class="infos">
+                                <p>Déjà inscrit ?</p>
+                                <button class="change reverse">Se connecter</button>
+                            </div>
                         </div>
                     </div>
                 </div>
