@@ -80,7 +80,7 @@ if(isset($_POST['action'])) {
 <html>
     <head>
         <link href="css/style.css" rel="stylesheet">
-        <title>Dixnez +</title>
+        <title>Rallye Video</title>
     </head>
 
     <body>
