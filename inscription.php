@@ -79,9 +79,16 @@ if(isset($_POST['action'])) {
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="css/style.css" rel="stylesheet">
-        <title>Dixnez +</title>
+        <?php require_once('connexion.php') ?>
+
+        <link href='css/style.css' rel='stylesheet'>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="Rallye Video">
+
+        <title>Rallye Video</title>
     </head>
+
     <body>
         <main>
             <?php include("Global/header.html") ?>
@@ -110,4 +117,5 @@ if(isset($_POST['action'])) {
             <?php include("Global/footer.html") ?>
         </main>
     </body>
+    
 </html>

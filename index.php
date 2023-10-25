@@ -1,12 +1,8 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <?php
-        require_once('connexion.php');
-        ?>
+        <?php require_once('connexion.php') ?>
+
         <link href='css/style.css' rel='stylesheet'>
 
         <meta charset="UTF-8">
