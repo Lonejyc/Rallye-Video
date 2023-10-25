@@ -12,7 +12,7 @@ if(isset($_POST['action'])) {
             $mdp = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encrypt the password
 
             // Connexion à la base de données
-            $connect = mysqli_connect('localhost', 'root', '', 'rallye video');
+            $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
 
             // Vérifie si la connexion a réussi
             if (!$connect) {
@@ -20,7 +20,7 @@ if(isset($_POST['action'])) {
             }
 
             // Prépare la requête SQL pour insérer les données dans la table "utilisateurs"
-            $request = "INSERT INTO rv_user (nom, prenom, email, mdp) VALUES ('$nom', '$prenom', '$mail', '$mdp')";
+            $request = "INSERT INTO rv_user (Nom, Prenom, Email, Mdp) VALUES ('$nom', '$prenom', '$mail', '$mdp')";
 
             // Exécute la requête SQL
             if (mysqli_query($connect, $request)) {
@@ -38,7 +38,7 @@ if(isset($_POST['action'])) {
             $mdp = $_POST['password'];
 
             // Connexion à la base de données
-            $connect = mysqli_connect('localhost', 'root', '', 'rallye video');
+            $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
 
             // Vérifie si la connexion a réussi
             if (!$connect) {
@@ -46,23 +46,27 @@ if(isset($_POST['action'])) {
             }
 
             // Prépare la requête SQL pour récupérer les données de l'utilisateur
-            $request = "SELECT * FROM rv_user WHERE Mail='$mail'";
+            $request = "SELECT * FROM rv_user WHERE Email='$mail'";
 
             // Exécute la requête SQL
             $result = mysqli_query($connect, $request);
-
-            // Vérifie si l'utilisateur existe
-            if(mysqli_num_rows($result) == 1) {
-                $row = mysqli_fetch_assoc($result);
-                if(password_verify($mdp, $row['Mdp'])) {
-                    $_SESSION['user_id'] = $row['ID'];
-                    header('Location: dashboard.php');
-                    exit();
+            if($result){
+                // Vérifie si l'utilisateur existe
+                if(mysqli_num_rows($result) == 1) {
+                    $row = mysqli_fetch_assoc($result);
+                    if(password_verify($mdp, $row['Mdp'])) {
+                        $_SESSION['user_id'] = $row['id'];
+                        echo "Connecté";
+                        //header('Location: dashboard.php');
+                        exit();
+                    } else {
+                        $erreur = "Mot de passe incorrect";
+                    }
                 } else {
-                    $erreur = "Mot de passe incorrect";
+                    $erreur = "Utilisateur non trouvé";
                 }
             } else {
-                $erreur = "Utilisateur non trouvé";
+                echo "Erreur : " . mysqli_error($connect);
             }
 
             // Ferme la connexion à la base de données
@@ -80,6 +84,7 @@ if(isset($_POST['action'])) {
     </head>
     <body>
         <main>
+            <?php include("Global/header.html") ?>
             <div class="wrap">
             <?php if(isset($succes)) {?>
                 <span class="succes"><?php echo $succes ?></span>
@@ -102,6 +107,7 @@ if(isset($_POST['action'])) {
                     <h2>Hello World !</h2>
                 </div>
             </div>
+            <?php include("Global/footer.html") ?>
         </main>
     </body>
 </html>

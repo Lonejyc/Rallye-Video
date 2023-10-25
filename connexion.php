@@ -7,7 +7,7 @@
   // pour mmi-agences, remplacez '' par votre mot de passe
   define ('PASS_BD','');
   // pour mmi-agences, remplacez 'movies' par votre login
-  define ('NOM_BD','rallye video');
+  define ('NOM_BD','rallyevideo');
 
   $CONNEXION = mysqli_connect (SERVEUR_BD, LOGIN_BD, PASS_BD);
   //Connexion au serveur de bases de données
