@@ -75,6 +75,7 @@
     font-family: Gotham;
     font-size: 32px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .card .infos {
@@ -95,6 +96,7 @@
     font-family: Gotham;
     font-size: 15px;
     font-weight: 350;
+    cursor: pointer;
 }
 
 .conne {
