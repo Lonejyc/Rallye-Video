@@ -79,8 +79,6 @@ if(isset($_POST['action'])) {
         <title>Dixnez +</title>
     </head>
     <body>
-        <header>
-        </header>
         <main>
             <div class="wrap">
             <?php if(isset($succes)) {?>
@@ -105,7 +103,5 @@ if(isset($_POST['action'])) {
                 </div>
             </div>
         </main>
-        <footer>
-        </footer>
     </body>
 </html>
