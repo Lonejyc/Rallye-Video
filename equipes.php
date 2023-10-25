@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +13,7 @@
     </head>
 
     <body>
-        <?php include("Global/header.html") ?>
+        <?php include("Global/header.php") ?>
         <main>
             <div class="Liste">
                 <p>Listes des équipes</p>
@@ -84,7 +85,7 @@
                 </div>
             </div>
         </main>
-        <?php include("Global/footer.html") ?>
+        <?php include("Global/footer.php") ?>
     </body>
     
 </html>

@@ -56,8 +56,7 @@ if(isset($_POST['action'])) {
                     $row = mysqli_fetch_assoc($result);
                     if(password_verify($mdp, $row['Mdp'])) {
                         $_SESSION['user_id'] = $row['id'];
-                        echo "Connecté";
-                        //header('Location: dashboard.php');
+                        header('Location: dashboard.php');
                         exit();
                     } else {
                         $erreur = "Mot de passe incorrect";
@@ -93,15 +92,15 @@ if(isset($_POST['action'])) {
                 <span class="erreur" ><?php echo $erreur ?></span>
             <?php } ?>
                 <form method="POST" action="#">
-                    <input type="text" name="nom" placeholder="Nom">
-                    <input type="text" name="prenom" placeholder="Prénom">
-                    <input type="text" name="mail" placeholder="Mail">
+                    <input type="text" name="nom" placeholder="Nom" required>
+                    <input type="text" name="prenom" placeholder="Prénom" required>
+                    <input type="text" name="mail" placeholder="Mail" required>
                     <input type="password" name="password" placeholder="Mot de Passe" minlength="8" required>
                     <button type="submit" name="action" value="inscription">S'inscrire</button>
                 </form>
                 <form method="POST" action="#">
-                    <input type="text" name="mail" placeholder="Mail">
-                    <input type="password" name="password" placeholder="Mot de passe">
+                    <input type="text" name="mail" placeholder="Mail" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
                     <button type="submit" name="action" value="connexion">Connexion</button>
                 </form>
                 <div class="txt">
