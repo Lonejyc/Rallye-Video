@@ -5,6 +5,9 @@
         <?php require_once('connexion.php') ?>
 
         <link href='css/style.css' rel='stylesheet'>
+        <link href="css/reset.css" rel="stylesheet">
+        <link href="css/header.css" rel="stylesheet">
+        <link href="css/footer.css" rel="stylesheet">
 
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">

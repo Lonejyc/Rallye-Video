@@ -79,6 +79,12 @@ if(isset($_POST['action'])) {
 <html>
     <head>
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/reset.css" rel="stylesheet">
+        <link href="css/header.css" rel="stylesheet">
+        <link href="css/footer.css" rel="stylesheet">
+        <link href="css/inscription.css" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>Rallye Video</title>
     </head>
 

@@ -24,7 +24,7 @@
             $team = $row["Nom_equipe"];
         }
     } else {
-        echo "0 results";
+        echo "Aucun résultat";
     }
 
     $connect->close();
@@ -33,7 +33,11 @@
 <!DOCTYPE html>
 <html>
         <head>
-                <link href="css/style.css" rel="stylesheet">
+                <link href="css/reset.css" rel="stylesheet">
+                <link href="css/header.css" rel="stylesheet">
+                <link href="css/footer.css" rel="stylesheet">
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <title>Rallye Video</title>
         </head>
 
