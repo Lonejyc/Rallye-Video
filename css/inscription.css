@@ -1,0 +1,106 @@
+.container {
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+    perspective: 800px;
+}
+
+.container .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+}
+
+.inscr, .conne {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    border-radius: 3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    backface-visibility: hidden;
+}
+
+.card h2 {
+    color: var(--Blanc, #FFF);
+    text-align: center;
+    font-family: Gotham;
+    font-size: 28px;
+    font-weight: 350;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.card input {
+    width: 350px;
+    height: 50px;
+    margin: 0px auto 66px;
+    padding-left: 70px;
+    display: flex;
+    justify-content: center;
+    border-radius: 0.9rem;
+    border: none;
+    background: rgba(215, 215, 215, 0.60);
+    color: rgba(255, 255, 255);
+    font-family: Gotham;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+
+.card input::placeholder {
+    color: rgba(255, 255, 255, 0.70);
+    font-family: Gotham;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.card .submit {
+    border-radius: 20px;
+    background: var(--Orange, #E46B36);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    padding: 10px 18px;
+    margin-top: 12px;
+    margin-bottom: 57px;
+    color: var(--Blanc, #FFF);
+    font-family: Gotham;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.card .infos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Blanc, #FFF);
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: 350;
+    gap: 20px;
+}
+
+.card .infos .change {
+    background: none;
+    border: none;
+    color: var(--Orange, #E46B36);
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: 350;
+}
+
+.conne {
+    background: var(--Bleu-gris, #7D9EA7);
+}
+
+.inscr {
+    transform: rotateY(180deg);
+}

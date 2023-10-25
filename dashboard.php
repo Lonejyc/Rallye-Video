@@ -48,7 +48,7 @@
                         <a href='deconnexion.php'><span class="decon">Déconnexion</span></a>
                         <section class="profil">
                             <h2>Information du profil</h2>
-                            <p><span class="bold">Nom:</sapn> <?php echo $nom; ?></p>
+                            <p><span class="bold">Nom:</span> <?php echo $nom; ?></p>
                             <p><span class="bold">Prénom:</span> <?php echo $prenom; ?></p>
                             <p><span class="bold">Email:</span> <?php echo $mail; ?></p>
                             <p><span class="bold">Team:</span> <?php echo $team; ?></p>

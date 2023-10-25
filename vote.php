@@ -12,11 +12,10 @@
     </head>
 
     <body>
+        <?php include("Global/header.php") ?>
         <main>
-            <?php include("Global/header.php") ?>
-            <div></div>
-            <?php include("Global/footer.php") ?>
         </main>
+        <?php include("Global/footer.php") ?>
     </body>
 
 </html>

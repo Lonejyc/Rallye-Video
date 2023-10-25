@@ -1,8 +1,10 @@
+<?php 
+    require_once('connexion.php');
+    session_start(); 
+?>
 <!DOCTYPE html>
 <html>
     <head>
-        <?php require_once('connexion.php') ?>
-
         <link href='css/style.css' rel='stylesheet'>
         <link href="css/reset.css" rel="stylesheet">
         <link href="css/header.css" rel="stylesheet">
@@ -15,8 +17,8 @@
     </head>
 
     <body>
+        <?php include("Global/header.php") ?>
         <main>
-            <?php include("Global/header.php") ?>
             <div>
                 <p>Le Rallye Vidéo commence dans</p>
                 <img src="images/animhorloge.svg">
@@ -37,8 +39,8 @@
                 </div>
             </div>
             <p>Annimation Bannière à faire</p>
-            <?php include("Global/footer.php") ?>
         </main>
+        <?php include("Global/footer.php") ?>
     </body>
 
 </html>

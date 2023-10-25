@@ -89,32 +89,44 @@ if(isset($_POST['action'])) {
     </head>
 
     <body>
+        <?php include("Global/header.php") ?>
         <main>
-            <?php include("Global/header.php") ?>
             <div class="wrap">
             <?php if(isset($succes)) {?>
                 <span class="succes"><?php echo $succes ?></span>
             <?php } if(isset($erreur)) {?>
                 <span class="erreur" ><?php echo $erreur ?></span>
             <?php } ?>
-                <form method="POST" action="#">
-                    <input type="text" name="nom" placeholder="Nom" required>
-                    <input type="text" name="prenom" placeholder="Prénom" required>
-                    <input type="text" name="mail" placeholder="Mail" required>
-                    <input type="password" name="password" placeholder="Mot de Passe" minlength="8" required>
-                    <button type="submit" name="action" value="inscription">S'inscrire</button>
-                </form>
-                <form method="POST" action="#">
-                    <input type="text" name="mail" placeholder="Mail" required>
-                    <input type="password" name="password" placeholder="Mot de passe" required>
-                    <button type="submit" name="action" value="connexion">Connexion</button>
-                </form>
-                <div class="txt">
-                    <h2>Hello World !</h2>
+                <h1>Connexion</h1>
+                <div class="container">
+                    <div class="card">
+                        <div class="conne">
+                            <form method="POST" action="#">
+                                <h2>Connexion</h2>
+                                <input type="text" name="mail" placeholder="Mail" autocomplete="off" required>
+                                <input type="password" name="password" placeholder="Mot de passe" autocomplete="off" required>
+                                <button type="submit" name="action" value="connexion" class="submit">Connexion</button>
+                            </form>
+                            <div class="infos">
+                                <p>Nouveau ici ?</p>
+                                <button class="change">S'inscrire</button>
+                            </div>
+                        </div>
+                        <div class="inscr">
+                            <form method="POST" action="#">
+                                <h2>Inscription</h2>
+                                <input type="text" name="nom" placeholder="Nom" required>
+                                <input type="text" name="prenom" placeholder="Prénom" required>
+                                <input type="text" name="mail" placeholder="Mail" required>
+                                <input type="password" name="password" placeholder="Mot de Passe" minlength="8" required>
+                                <button type="submit" name="action" value="inscription">S'inscrire</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <?php include("Global/footer.php") ?>
         </main>
+        <?php include("Global/footer.php") ?>
     </body>
     
 </html>
