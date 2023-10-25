@@ -9,7 +9,7 @@
     </ul>
     <h2>Live</h2>
     <?php if (isset($_SESSION['user_id'])) {
-        echo "<a href='deconnexion.php'><h2>Déconnexion</h2></a>";
+        echo "<a href='dashboard.php'><h2>Dashboard</h2></a>";
     } else {
         echo "<a href='inscription.php'><h2>Connexion</h2></a>";
     } ?>
