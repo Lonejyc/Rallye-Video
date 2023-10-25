@@ -18,11 +18,22 @@
             <div class="Liste">
                 <p>Listes des équipes</p>
                 <?php
-                $equipes = array(
-                    "Équipe 1" => array("Membre 1", "Membre 2", "Membre 3"),
-                    "Équipe 2" => array("Membre A", "Membre B", "Membre C"),
-                    "Équipe 3" => array("Membre X", "Membre Y", "Membre Z")
-                );
+                // Requête SQL pour récupérer les équipes et leurs membres
+                $request = "SELECT t.Nom_equipe, u.Prenom FROM rv_team t 
+                            JOIN rv_user u ON t.id = u.rv_team_id";
+                $result = mysqli_query($CONNEXION, $request);
+
+                // Créer un tableau associatif pour stocker les équipes et leurs membres
+                $equipes = array();
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $equipe = $row['Nom_equipe'];
+                    $membre = $row['Prenom'];
+                    if (!isset($equipes[$equipe])) {
+                        $equipes[$equipe] = array();
+                    }
+                    $equipes[$equipe][] = $membre;
+                }
+                // Afficher les équipes et leurs membres dans un tableau
                 echo "<table border='1'>";
                 echo "<tr><th>Équipe</th><th>Membres</th></tr>";
                 foreach ($equipes as $equipe => $membres) {

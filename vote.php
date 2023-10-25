@@ -13,9 +13,9 @@
 
     <body>
         <main>
-            <?php include("Global/header.html") ?>
+            <?php include("Global/header.php") ?>
             <div></div>
-            <?php include("Global/footer.html") ?>
+            <?php include("Global/footer.php") ?>
         </main>
     </body>
 
