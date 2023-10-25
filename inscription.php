@@ -80,8 +80,9 @@ if(isset($_POST['action'])) {
 <html>
     <head>
         <link href="css/style.css" rel="stylesheet">
-        <title>Rallye Video</title>
+        <title>Dixnez +</title>
     </head>
+
     <body>
         <main>
             <?php include("Global/header.php") ?>
@@ -110,4 +111,5 @@ if(isset($_POST['action'])) {
             <?php include("Global/footer.php") ?>
         </main>
     </body>
+    
 </html>

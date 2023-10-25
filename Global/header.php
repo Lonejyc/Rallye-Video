@@ -1,5 +1,5 @@
 <header>
-    <a href="index.php"><h1>Rallye video - Index</h1></a>
+    <a href="index.php"><h1>Rallye video</h1></a>
     <img src="images/logo.svg">
     <ul>
         <li><h2>Événement</h2></li>
