@@ -92,11 +92,6 @@ if(isset($_POST['action'])) {
         <?php include("Global/header.php") ?>
         <main>
             <div class="wrap">
-            <?php if(isset($succes)) {?>
-                <span class="succes"><?php echo $succes ?></span>
-            <?php } if(isset($erreur)) {?>
-                <span class="erreur" ><?php echo $erreur ?></span>
-            <?php } ?>
                 <h1>Connexion</h1>
                 <div class="container">
                     <div class="card">
@@ -105,6 +100,11 @@ if(isset($_POST['action'])) {
                                 <h2>Connexion</h2>
                                 <input type="text" name="mail" placeholder="Mail" autocomplete="off" required>
                                 <input type="password" name="password" placeholder="Mot de passe" autocomplete="off" required>
+                                <?php if(isset($succes)) {?>
+                                    <span class="succes"><?php echo $succes ?></span>
+                                <?php } if(isset($erreur)) {?>
+                                    <span class="erreur" ><?php echo $erreur ?></span>
+                                <?php } ?>
                                 <button type="submit" name="action" value="connexion" class="submit">Connexion</button>
                             </form>
                             <div class="infos">
@@ -119,6 +119,11 @@ if(isset($_POST['action'])) {
                                 <input type="text" name="prenom" placeholder="Prénom" required>
                                 <input type="text" name="mail" placeholder="Mail" required>
                                 <input type="password" name="password" placeholder="Mot de Passe" minlength="8" required>
+                                <?php if(isset($succes)) {?>
+                                    <span class="succes"><?php echo $succes ?></span>
+                                <?php } if(isset($erreur)) {?>
+                                    <span class="erreur" ><?php echo $erreur ?></span>
+                                <?php } ?>
                                 <button type="submit" name="action" value="inscription" class="submit">S'inscrire</button>
                             </form>
                             <div class="infos">
