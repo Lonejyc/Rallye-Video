@@ -24,7 +24,16 @@
             $team = $row["Nom_equipe"];
         }
     } else {
-        echo "Aucun résultat";
+        $sql = "SELECT Nom, Prenom, Email, Mdp FROM rv_user u WHERE u.id = $user_id";
+        $result = $connect->query($sql);
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while($row = $result->fetch_assoc()) {
+                $nom = $row["Nom"];
+                $prenom = $row["Prenom"];
+                $mail = $row["Email"];
+            }
+        } else echo "Aucun résultats";
     }
 
     $connect->close();
@@ -51,13 +60,11 @@
                             <p><span class="bold">Nom:</span> <?php echo $nom; ?></p>
                             <p><span class="bold">Prénom:</span> <?php echo $prenom; ?></p>
                             <p><span class="bold">Email:</span> <?php echo $mail; ?></p>
+                            <?php if (isset($team)) { ?>
                             <p><span class="bold">Team:</span> <?php echo $team; ?></p>
-<<<<<<< HEAD
-=======
                             <?php } else { ?>
                             <p><span class="bold">Team:</span> Aucune team</p>
                             <?php } ?>
->>>>>>> e873bf6f1cc60d62e2211b11d76b7145cd8cd71e
                         </section>
                         <section class="mdp">
                             <h2>Changer le mot de passe</h2>
