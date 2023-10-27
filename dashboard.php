@@ -62,6 +62,8 @@
                             <p><span class="bold">Email:</span> <?php echo $mail; ?></p>
                             <?php if (isset($team)) {?>
                             <p><span class="bold">Team:</span> <?php echo $team; ?></p>
+                            <?php } else { ?>
+                            <p><span class="bold">Team:</span> Aucune team</p>
                             <?php } ?>
                         </section>
                         <section class="mdp">
