@@ -11,6 +11,6 @@
     <?php if (isset($_SESSION['user_id'])) {
         echo "<a href='dashboard.php'><h2>Dashboard</h2></a>";
     } else {
-        echo "<a href='inscription.php'><h2>Connexion</h2></a>";
+        echo "<a href='se_connecter.php'><h2>Connexion</h2></a>";
     } ?>
 </header>

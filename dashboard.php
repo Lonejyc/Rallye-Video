@@ -24,23 +24,14 @@
             $team = $row["Nom_equipe"];
         }
     } else {
-        $sql = "SELECT Nom, Prenom, Email, Mdp FROM rv_user u WHERE u.id = $user_id";
-        $result = $connect->query($sql);
-        if ($result->num_rows > 0) {
-            // Output data of each row
-            while($row = $result->fetch_assoc()) {
-                $nom = $row["Nom"];
-                $prenom = $row["Prenom"];
-                $mail = $row["Email"];
-            }
-        } else echo "Aucun résultats";
+        echo "Aucun résultat";
     }
 
     $connect->close();
 ?>
 
 <!DOCTYPE html>
-<html>
+    <html>
         <head>
                 <link href="css/reset.css" rel="stylesheet">
                 <link href="css/header.css" rel="stylesheet">
@@ -54,15 +45,13 @@
                 <?php include("Global/header.php") ?>
                 <main>
                         <h1>Dashboard</h1>
-                        <a href='deconnexion.php'><span class="decon">Déconnexion</span></a>
+                        <a href='se_deconnecter.php'><span class="decon">Déconnexion</span></a>
                         <section class="profil">
                             <h2>Information du profil</h2>
                             <p><span class="bold">Nom:</span> <?php echo $nom; ?></p>
                             <p><span class="bold">Prénom:</span> <?php echo $prenom; ?></p>
                             <p><span class="bold">Email:</span> <?php echo $mail; ?></p>
-                            <?php if (isset($team)) {?>
                             <p><span class="bold">Team:</span> <?php echo $team; ?></p>
-                            <?php } ?>
                         </section>
                         <section class="mdp">
                             <h2>Changer le mot de passe</h2>

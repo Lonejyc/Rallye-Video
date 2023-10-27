@@ -54,8 +54,9 @@
                     <p>Inscription dans une équipe</p>
                     <form method="POST">
                         <?php
+                        /*
                         // Vérifier si l'utilisateur est connecté (assumons que vous avez une session utilisateur)
-                        if if (isset($_SESSION['user_id'])) {
+                        if (isset($_SESSION['user_id'])) {
                             $user_id = $_SESSION['user_id'];
 
                             // Traitement du formulaire lorsqu'il est soumis
@@ -64,13 +65,14 @@
                                 $equipe_id = $_POST['equipe'];
 
                                 // Ajouter l'utilisateur à l'équipe dans la base de données
-                                $request = "INSERT INTO rv_user (rv_team_id) VALUES ($equipe_id) WHERE id = $user_id";
-                                mysqli_query($CONNEXION, $request);
+                                //$request = "INSERT INTO rv_user (rv_team_id) VALUES ($equipe_id) WHERE id = $user_id";
+                                //mysqli_query($CONNEXION, $request);
                                 echo "Vous avez été inscrit dans l'équipe avec succès.";
                             }
                         } else {
                             echo "Connectez-vous pour vous inscrire dans une équipe.";
                         }
+                        */
                         ?>
                         <div id="equipe-select">
                             <select name="equipe" id="equipe" required>

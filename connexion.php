@@ -1,11 +1,10 @@
 <?php
-
   define ('SERVEUR_BD','localhost');
   // pour mmi-agences, remplacez 'root' par votre login
   define ('LOGIN_BD','root');
   // Pour MAMP, remplacez '' par 'root'
   // pour mmi-agences, remplacez '' par votre mot de passe
-  define ('PASS_BD','');
+  define ('PASS_BD','root');
   // pour mmi-agences, remplacez 'movies' par votre login
   define ('NOM_BD','rallyevideo');
 
