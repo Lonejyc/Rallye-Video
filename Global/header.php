@@ -1,16 +1,22 @@
 <header>
-    <a href="index.php"><h1>Rallye video</h1></a>
-    <img src="images/logo.svg">
-    <ul>
-        <li><h2>Événement</h2></li>
-        <li><a href="equipes.php"><h2>Équipe</h2></a></li>
-        <li><h2>Dépot</h2></li>
-        <li><h2>Vote</h2></li>
-    </ul>
-    <h2>Live</h2>
-    <?php if (isset($_SESSION['user_id'])) {
-        echo "<a href='dashboard.php'><h2>Dashboard</h2></a>";
-    } else {
-        echo "<a href='se_connecter.php'><h2>Connexion</h2></a>";
-    } ?>
+    <nav>
+        <div class="logo">
+            <a href="index.php"><h1>Rallye video</h1></a>
+            <img src="images/logo.svg">
+        </div>
+        <ul>
+            <li><a href="event.php">Événement</a></li>
+            <li><a href="equipes.php">Équipe</a></li>
+            <li><a href="depot.php">Dépot</a></li>
+            <li><a href="vote.php">Vote</a></li>
+        </ul>
+        <ul>
+            <li><a href="live.php">Live</a></li>
+            <?php if (isset($_SESSION['user_id'])) {
+                echo "<li><a href='dashboard.php'>Dashboard</a></li>";
+            } else {
+                echo "<li><a href='se_connecter.php'>Connexion</a></li>";
+            } ?>
+        </ul>
+    </nav>
 </header>
