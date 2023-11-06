@@ -1,12 +1,12 @@
 <?php
-  define ('SERVEUR_BD','192.168.135.113');
+  define ('SERVEUR_BD','localhost');
   // pour mmi-agences, remplacez 'root' par votre login
-  define ('LOGIN_BD','boullayt');
+  define ('LOGIN_BD','root');
   // Pour MAMP, remplacez '' par 'root'
   // pour mmi-agences, remplacez '' par votre mot de passe
-  define ('PASS_BD','!decOrgyu159');
+  define ('PASS_BD','');
   // pour mmi-agences, remplacez 'movies' par votre login
-  define ('NOM_BD','boullayt');
+  define ('NOM_BD','rallyevideo');
 
   $CONNEXION = mysqli_connect (SERVEUR_BD, LOGIN_BD, PASS_BD);
   //Connexion au serveur de bases de données

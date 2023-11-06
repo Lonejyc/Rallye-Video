@@ -12,7 +12,7 @@ if(isset($_POST['action'])) {
             $mdp = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encrypt the password
 
             // Connexion à la base de données
-            $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
+            $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
 
             // Vérifie si la connexion a réussi
             if (!$connect) {
@@ -24,21 +24,21 @@ if(isset($_POST['action'])) {
 
             // Exécute la requête SQL
             if (mysqli_query($connect, $request)) {
-                $succes = "Votre compte a été créé avec succès";
+                $succes2 = "Votre compte a été créé avec succès";
             } else {
                 echo "Erreur : " . mysqli_error($connect);
             }
 
             // Ferme la connexion à la base de données
             mysqli_close($connect);
-        } else $erreur = "Veuillez remplir tout les champs";
+        } else $erreur2 = "Veuillez remplir tout les champs";
     } else if($action == 'connexion') {
         if(!empty($_POST['mail']) AND !empty($_POST['password'])) {
             $mail = $_POST['mail'];
             $mdp = $_POST['password'];
 
             // Connexion à la base de données
-            $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
+            $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
             
             // Vérifie si la connexion a réussi
             if (!$connect) {
@@ -59,10 +59,10 @@ if(isset($_POST['action'])) {
                         header('Location: dashboard.php');
                         exit();
                     } else {
-                        $erreur = "Mot de passe incorrect";
+                        $erreur1 = "Mot de passe incorrect";
                     }
                 } else {
-                    $erreur = "Utilisateur introuvable";
+                    $erreur1 = "Utilisateur introuvable";
                 }
             } else {
                 echo "Erreur : " . mysqli_error($connect);
@@ -70,7 +70,7 @@ if(isset($_POST['action'])) {
 
             // Ferme la connexion à la base de données
             mysqli_close($connect);
-        } else $erreur = "Veuillez remplir tout les champs";
+        } else $erreur1 = "Veuillez remplir tout les champs";
     }
 }
 ?>
@@ -92,15 +92,13 @@ if(isset($_POST['action'])) {
         <?php include("Global/header.php") ?>
         <main>
             <div class="wrap">
-            <?php if(isset($succes)) {?>
-                <span class="succes"><?php echo $succes ?></span>
-            <?php } if(isset($erreur)) {?>
-                <span class="erreur" ><?php echo $erreur ?></span>
-            <?php } ?>
                 <h1>Connexion</h1>
                 <div class="container">
                     <div class="card">
                         <div class="conne">
+                            <?php if(isset($erreur1)) {?>
+                                <span class="erreur" ><?php echo $erreur1 ?></span>
+                            <?php } ?>
                             <form method="POST" action="#">
                                 <h2>Connexion</h2>
                                 <input type="text" name="mail" placeholder="Mail" autocomplete="off" required>
@@ -113,6 +111,11 @@ if(isset($_POST['action'])) {
                             </div>
                         </div>
                         <div class="inscr">
+                        <?php if(isset($succes2)) {?>
+                            <span class="succes"><?php echo $succes2 ?></span>
+                        <?php } if(isset($erreur2)) {?>
+                            <span class="erreur" ><?php echo $erreur2 ?></span>
+                        <?php } ?>
                             <form method="POST" action="#">
                                 <h2>Inscription</h2>
                                 <input type="text" name="nom" placeholder="Nom" required>

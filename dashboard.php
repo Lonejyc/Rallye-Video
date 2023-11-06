@@ -4,7 +4,7 @@
     $user_id = $_SESSION['user_id'];
 
     // Connexion à la base de données
-    $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
+    $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
 
     // Check connection
     if ($connect->connect_error) {
@@ -63,7 +63,7 @@
                             <?php if (isset($team)) { ?>
                             <p><span class="bold">Team:</span> <?php echo $team; ?></p>
                             <?php } else { ?>
-                            <p><span class="bold">Team:</span> Aucune team</p>
+                            <p><span class="bold">Team:</span> Aucune. Si vous voulez rejoindre une équipe, cliquez <a href="equipes.php">ici</a></p>
                             <?php } ?>
                         </section>
                         <section class="mdp">
@@ -78,7 +78,7 @@
                             <?php
                             function changePassword($user_id, $current_password, $new_password) {
                                 // Connexion à la base de données
-                                $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
+                                $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
 
                                 // Check connection
                                 if ($connect->connect_error) {

@@ -138,5 +138,6 @@
     position: absolute;
     top: 380px;
     left: 50%;
+    z-index: 1;
     transform: translateX(-50%);
 }

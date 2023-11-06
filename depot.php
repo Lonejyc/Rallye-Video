@@ -5,7 +5,7 @@
         if ($action == 'envoie') {
         if(isset($_SESSION['user_id'])) {
             $user_id = $_SESSION['user_id'];
-            $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
+            $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
             $query = "SELECT Nom, Prenom, Email, Mdp, rv_team_id, Nom_equipe FROM rv_user u RIGHT JOIN rv_team t ON u.rv_team_id=t.id WHERE u.id = $user_id";
             $result = mysqli_query($connect, $query);
             if ($result->num_rows > 0) {
@@ -43,10 +43,10 @@
         } else {
             echo "Connexion requise pour déposer les fichiers";
         }
+        $connect->close();
     }
 }
-    // Fermeture de la connexion à la base de données
-    $connect->close();
+    
 ?>
 
 <!DOCTYPE html>
@@ -65,13 +65,17 @@
     <body>
         <?php include("Global/header.php") ?>
         <main>
-            <form method="POST" action="" enctype="multipart/form-data">
-                <input type="text" name="nom" placeholder="Nom de votre film" required>
-                <input type="text" name="affiche" placeholder="Affiche de votre film" required>
-                <input type="text" name="minia" placeholder="Miniature de votre film" required>
-                <input type="text" name="video" placeholder="Film" required>
-                <button type="submit" name="action" value="envoie">Envoyer</button>
-            </form>
+            <section>
+                <h1>Déposer un film</h1>
+                <p><span>Pour déposer un film, vous devez mettre les liens mmi-cloud de votre film</span></p>
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <input type="text" name="nom" placeholder="Nom de votre film" required>
+                    <input type="text" name="affiche" placeholder="Affiche de votre film" required>
+                    <input type="text" name="minia" placeholder="Miniature de votre film" required>
+                    <input type="text" name="video" placeholder="Film" required>
+                    <button type="submit" name="action" value="envoie">Envoyer</button>
+                </form>
+            </section>
         </main>
         <?php include("Global/footer.php") ?>
     </body>
