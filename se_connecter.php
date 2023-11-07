@@ -105,7 +105,7 @@ if(isset($_POST['action'])) {
                                 <input type="password" name="password" placeholder="Mot de passe" autocomplete="off" required>
                                 <button type="submit" name="action" value="connexion" class="submit">Connexion</button>
                             </form>
-                            <section class="infos">
+                            <section class="infos" aria-label="Informations>
                                 <p>Nouveau ici ?</p>
                                 <button class="change normal">S'inscrire</button>
                             </section>
@@ -124,7 +124,7 @@ if(isset($_POST['action'])) {
                                 <input type="password" name="password" placeholder="Mot de Passe" minlength="8" required>
                                 <button type="submit" name="action" value="inscription" class="submit">S'inscrire</button>
                             </form>
-                            <section class="infos">
+                            <section class="infos" aria-label="Informations>
                                 <p>Déjà inscrit ?</p>
                                 <button class="change reverse">Se connecter</button>
                             </section>
