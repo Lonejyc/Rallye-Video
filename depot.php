@@ -5,7 +5,7 @@
         if ($action == 'envoie') {
         if(isset($_SESSION['user_id'])) {
             $user_id = $_SESSION['user_id'];
-            $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
+            $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
             $query = "SELECT Nom, Prenom, Email, Mdp, rv_team_id, Nom_equipe FROM rv_user u RIGHT JOIN rv_team t ON u.rv_team_id=t.id WHERE u.id = $user_id";
             $result = mysqli_query($connect, $query);
             if ($result->num_rows > 0) {

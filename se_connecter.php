@@ -12,7 +12,7 @@ if(isset($_POST['action'])) {
             $mdp = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encrypt the password
 
             // Connexion à la base de données
-            $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
+            $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
 
             // Vérifie si la connexion a réussi
             if (!$connect) {
@@ -38,7 +38,7 @@ if(isset($_POST['action'])) {
             $mdp = $_POST['password'];
 
             // Connexion à la base de données
-            $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
+            $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
             
             // Vérifie si la connexion a réussi
             if (!$connect) {

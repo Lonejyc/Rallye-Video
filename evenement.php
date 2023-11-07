@@ -12,6 +12,9 @@
     </head>
 
     <body>
+        <?php include("Global/header.php") ?>
+        <main>
+        </main>
+        <?php include("Global/footer.php") ?>
     </body>
-
 </html>
