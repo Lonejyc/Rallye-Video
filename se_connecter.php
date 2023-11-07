@@ -5,9 +5,9 @@ session_start();
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
     if($action == 'inscription') {
-        if(!empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['mail']) AND !empty($_POST['password'])) {
-            $nom = $_POST['nom'];
-            $prenom = $_POST['prenom'];
+        if(!empty($_POST['name']) AND !empty($_POST['firstName']) AND !empty($_POST['mail']) AND !empty($_POST['password'])) {
+            $nom = $_POST['name'];
+            $prenom = $_POST['firstName'];
             $mail = $_POST['mail'];
             $mdp = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encrypt the password
 
@@ -93,11 +93,11 @@ if(isset($_POST['action'])) {
         <main>
             <div class="wrap">
                 <h1>Connexion</h1>
-                <div class="container">
+                <section class="container">
                     <div class="card">
                         <div class="conne">
                             <?php if(isset($erreur1)) {?>
-                                <span class="erreur" ><?php echo $erreur1 ?></span>
+                                <span class="error" ><?php echo $erreur1 ?></span>
                             <?php } ?>
                             <form method="POST" action="#">
                                 <h2>Connexion</h2>
@@ -105,32 +105,32 @@ if(isset($_POST['action'])) {
                                 <input type="password" name="password" placeholder="Mot de passe" autocomplete="off" required>
                                 <button type="submit" name="action" value="connexion" class="submit">Connexion</button>
                             </form>
-                            <div class="infos">
+                            <section class="infos">
                                 <p>Nouveau ici ?</p>
                                 <button class="change normal">S'inscrire</button>
-                            </div>
+                            </section>
                         </div>
                         <div class="inscr">
                         <?php if(isset($succes2)) {?>
                             <span class="succes"><?php echo $succes2 ?></span>
                         <?php } if(isset($erreur2)) {?>
-                            <span class="erreur" ><?php echo $erreur2 ?></span>
+                            <span class="error" ><?php echo $erreur2 ?></span>
                         <?php } ?>
                             <form method="POST" action="#">
                                 <h2>Inscription</h2>
-                                <input type="text" name="nom" placeholder="Nom" required>
-                                <input type="text" name="prenom" placeholder="Prénom" required>
+                                <input type="text" name="name" placeholder="Nom" required>
+                                <input type="text" name="firstName" placeholder="Prénom" required>
                                 <input type="text" name="mail" placeholder="Mail" required>
                                 <input type="password" name="password" placeholder="Mot de Passe" minlength="8" required>
                                 <button type="submit" name="action" value="inscription" class="submit">S'inscrire</button>
                             </form>
-                            <div class="infos">
+                            <section class="infos">
                                 <p>Déjà inscrit ?</p>
                                 <button class="change reverse">Se connecter</button>
-                            </div>
+                            </section>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
             <script src="script/flipcard.js"></script>
         </main>
