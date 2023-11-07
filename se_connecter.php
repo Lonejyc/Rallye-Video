@@ -25,6 +25,10 @@ if(isset($_POST['action'])) {
             // Exécute la requête SQL
             if (mysqli_query($connect, $request)) {
                 $succes2 = "Votre compte a été créé avec succès";
+                $user_id = mysqli_insert_id($connect); // Récupère l'ID de l'utilisateur inséré
+                $_SESSION['user_id'] = $user_id; // Stocke l'ID de l'utilisateur dans la session
+                header('Location: dashboard.php'); // Redirige l'utilisateur vers la page de tableau de bord
+                exit();
             } else {
                 echo "Erreur : " . mysqli_error($connect);
             }
