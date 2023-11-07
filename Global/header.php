@@ -7,8 +7,10 @@
         <ul>
             <li><a href="event.php">Événement</a></li>
             <li><a href="equipes.php">Équipe</a></li>
-            <li><a href="depot.php">Dépot</a></li>
-            <li><a href="vote.php">Vote</a></li>
+            <?php if (isset($_SESSION['user_id'])) {
+                echo "<li><a href='depot.php'>Dépot</a></li>
+                <li><a href='vote.php'>Vote</a></li>";
+            } ?>
         </ul>
         <ul>
             <li><a href="live.php">Live</a></li>
