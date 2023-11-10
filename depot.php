@@ -1,26 +1,30 @@
-<?php 
-    session_start();
-?>
+<!-- Lancement de la session  -->
+<?php session_start(); ?>
 
 <!DOCTYPE html>
+<!-- Partie HTML de la page -->
 <html>
+    <!-- Section Head de la page HTML -->
     <head>
         <?php require_once('connexion.php') ?>
-
+        <!-- Lien Logo -->
+	    <link rel="icon" type="image/x-icons" href="images/logo_cam.svg">
+        <!-- Lien CSS -->
         <link href="css/reset.css" rel="stylesheet">
+        <link href="css/wrap.css" rel="stylesheet">
         <link href="css/header.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
-
+        <!-- Encodage en UTF-8 -->
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">
-
-        <title>Rallye Video</title>
+        <!-- Titre de la page web -->
+        <title>Rallye Video - Depot</title>
     </head>
-
+    <!-- Section Body de la page HTML -->
     <body>
-        <div class="wrap">
-            <?php include("Global/header.php") ?>
-            <main>
+        <?php include("global/header.php") ?>
+        <main>
+            <div class="wrap">
                 <h1>Déposer un film</h1>
                 <span>Pour déposer un film, vous devez déposer un dossier contenant votre film, une affiche et une miniature (dossier ≈ 300Mo).</span>
                 <h2>Convention de nommage :</h2>
@@ -36,8 +40,8 @@
                     height="500"
                     src="https://iutc-cloud.univ-smb.fr/s/z3FPBnSMLRCTCbk">
                 </iframe>
-            </main>
-            <?php include("Global/footer.php") ?>
-        </div>
+            </div>
+        </main>
+        <?php include("global/footer.php") ?>
     </body>
 </html>

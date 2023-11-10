@@ -29,19 +29,22 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
 ?>
 
 <!DOCTYPE html>
+<!-- Partie HTML de la page -->
 <html>
+    <!-- Section Head de la page HTML -->
     <head>
 
         <link href="css/reset.css" rel="stylesheet">
+        <link href="css/wrap.css" rel="stylesheet">
         <link href="css/header.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
-
+        <!-- Encodage en UTF-8 -->
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">
-
-        <title>Rallye Video</title>
+        <!-- Titre de la page web -->
+        <title>Rallye Video - Admin</title>
     </head>
-
+    <!-- Section Body de la page HTML -->
     <body>
         <div class="wrap">
             <?php include("Global/header.php") ?>
