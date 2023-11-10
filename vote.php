@@ -1,130 +1,69 @@
 <?php
-    // Lancement de la session
-    session_start();
+session_start();
+// Vérifiez si l'utilisateur est connecté
+if (!isset($_SESSION['user_id'])) {
+    // Si l'utilisateur n'est pas connecté, affichez un message et empêchez-le de voter.
+    echo "Vous devez vous connecter pour voter";
+    echo "<a href='se_connecter.php'>Connexion</a>";
+    exit; // Arrêtez le script
+}
+require_once('connexion.php');
+$request = "SELECT * FROM rv_depot";
 
-    // Vérifiez si l'utilisateur est connecté
-    if (!isset($_SESSION['user_id'])) {
-        // Si l'utilisateur n'est pas connecté, affichez un message et empêchez-le de voter.
-        echo "Vous devez vous connecter pour voter.";
-        exit; // Arrêtez le script
-    }
+if (isset($_POST['vote'])) {
+    $action = $_POST['vote'];
+    if ($action == "Voter") {
+        $id_film = $_POST['id_film'];
+        $id_user = $_SESSION['user_id'];
 
-    // Vérifiez si l'utilisateur a déjà voté
-    if (!isset($_SESSION['votes'])) {
-        $_SESSION['votes'] = array(); // Créez un tableau pour suivre les votes
+        $req = "SELECT * FROM rv_votes WHERE rv_user_id = '$id_user'";
+
+        $result = mysqli_query($CONNEXION, $req);
+        if(mysqli_num_rows($result) >= 1){
+            $vote = "Vous avez déjà voté";
+        } else {
+            $req = "INSERT INTO rv_votes (rv_user_id, rv_depot_id) VALUES ('$id_user', '$id_film')";
+            mysqli_query($CONNEXION, $req);
+            $vote = "Merci d'avoir voté";
+        }
     }
+}
 ?>
-
 <!DOCTYPE html>
-<!-- Partie HTML de la page -->
 <html>
-    <!-- Section Head de la page HTML -->
     <head>
-        <?php require_once('connexion.php') ?>
-        <!-- Lien Logo -->
-	    <link rel="icon" type="image/x-icons" href="images/logo_cam.svg">
-        <!-- Lien CSS -->
-        <link href="css/reset.css" rel="stylesheet">
-        <link href="css/wrap.css" rel="stylesheet">
-        <link href="css/header.css" rel="stylesheet">
-        <link href="css/footer.css" rel="stylesheet">
-        <!-- Encodage en UTF-8 -->
+
+        <link href='css/reset.css' rel='stylesheet'>
+
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">
-        <!-- Titre de la page web -->
-        <title>Rallye Video - Votes</title>
+  
+        <title>Rallye Video</title>
     </head>
-    <!-- Section Body de la page HTML -->
     <body>
-        <?php include("global/header.php") ?>
+        <?php include("Global/header.php") ?>
         <main>
-            <div class="wrap">
+            <div>
                 <h1>Vote</h1>
-                <div class="parent">
-                    <div class="div1"> 
-                        <button class="vote-button" data-votes="0">Vote</button>
-                        <span class="vote-count">0</span>
+                <?php if(isset($vote)): ?>
+                <p><?php echo $vote; ?></p>
+                <?php endif; ?>
+                <div class="films">
+                    <?php if($rv_depot = mysqli_query($CONNEXION, $request)): ?>
+                    <?php foreach($rv_depot as $rv_depot): ?>
+                    <div class="film">
+                        <span class="affiche"><?php echo $rv_depot['Affiche']; ?></span>
+                        <span class="nom"><?php echo $rv_depot['Nom_film']; ?></span>
+                        <form action="#" method="POST">
+                            <input type="hidden" name="id_film" value="<?php echo $rv_depot['id']; ?>">
+                            <input type="submit" name="vote" value="Voter">
+                        </form>
                     </div>
-                    <div class="div2"> 
-                        <button class="vote-button" data-votes="0">Vote</button>
-                        <span class="vote-count">0</span>
-                    </div>
-                    <div class="div3"> 
-                        <button class="vote-button" data-votes="0">Vote</button>
-                        <span class="vote-count">0</span>
-                    </div>
-                    <div class="div4"> 
-                        <button class="vote-button" data-votes="0">Vote</button>
-                        <span class="vote-count">0</span>
-                    </div>
-                    <div class="div5"> 
-                        <button class="vote-button" data-votes="0">Vote</button>
-                        <span class="vote-count">0</span>
-                    </div>
-                    <div class="div6"> 
-                        <button class="vote-button" data-votes="0">Vote</button>
-                        <span class="vote-count">0</span>
-                    </div>
-                    <div class="div7"> 
-                        <button class="vote-button" data-votes="0">Vote</button>
-                        <span class="vote-count">0</span>
-                    </div>
-                    <div class="div8">
-                        <button class="vote-button" data-votes="0">Vote</button>
-                        <span class="vote-count">0</span> </div>
-                    <div class="div9">
-                        <button class="vote-button" data-votes="0">Vote</button>
-                        <span class="vote-count">0</span> 
-                    </div>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
-                <script>
-                    // Sélectionnez tous les boutons de vote
-                    const voteButtons = document.querySelectorAll('.vote-button');
-
-                    // Limite de votes par utilisateur
-                    const maxVotes = 3;
-
-                    // Écoutez les clics sur les boutons de vote
-                    voteButtons.forEach((button) => {
-                        button.addEventListener('click', () => {
-                            const div = button.parentElement;
-                            const voteCount = div.querySelector('.vote-count');
-                            let votes = parseInt(voteCount.textContent);
-
-                            if (votes < maxVotes) {
-                                // Vérifiez si l'utilisateur a déjà voté pour cette œuvre
-                                if (!hasVoted(div)) {
-                                    votes++;
-                                    voteCount.textContent = votes;
-                                    button.setAttribute('disabled', 'true');
-
-                                    // Enregistrez le vote dans la session de l'utilisateur
-                                    recordVote(div);
-
-                                    // Vous pouvez également ajouter ici le code pour enregistrer le vote côté serveur.
-                                } else {
-                                    alert('Vous avez déjà voté pour cette œuvre.');
-                                }
-                            } else {
-                                alert('Vous avez atteint la limite de votes.');
-                            }
-                        });
-                    });
-
-                    // Fonction pour vérifier si l'utilisateur a déjà voté pour une œuvre
-                    function hasVoted(div) {
-                        const divIndex = Array.from(div.parentElement.children).indexOf(div);
-                        return divIndex in userVotes;
-                    }
-
-                    // Fonction pour enregistrer le vote de l'utilisateur dans la session
-                    function recordVote(div) {
-                        const divIndex = Array.from(div.parentElement.children).indexOf(div);
-                        userVotes[divIndex] = true;
-                    }
-                </script>
             </div>
         </main>
-        <?php include("global/footer.php") ?>
+        <?php include("Global/footer.php") ?>
     </body>
 </html>

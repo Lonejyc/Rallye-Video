@@ -93,6 +93,25 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
                 </section>
                 <section class="result" aria-label="Résultat des votes">
                     <h2>résultat des votes</h2>
+                    <?php
+                        $request = "SELECT d.Nom_film, COUNT(d.Nom_film) AS 'Nombre de votes' 
+                        FROM rv_depot d
+                        LEFT JOIN rv_votes v ON d.id=v.rv_depot_id 
+                        GROUP BY d.Nom_film;";
+                        $films = mysqli_query($CONNEXION, $request);
+                    ?>
+                    <table>
+                        <tr>
+                            <th>Film</th>
+                            <th>Nombre de votes</th>
+                        </tr>
+                        <?php foreach($films as $film): ?>
+                        <tr>
+                            <td><?php echo $film['Nom_film']; ?></td>
+                            <td><?php echo $film['Nombre de votes']; ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
                 </section>
             </main>
             <?php include("Global/footer.php") ?>
