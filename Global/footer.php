@@ -1,9 +1,9 @@
 <footer>
     <nav>
         <ul>
-            <li>PARTENAIRES</li>
-            <li>MENTIONS LÉGALES</li>
-            <li>À PROPOS</li>
+            <li><a href="infos.php#sponsor">PARTENAIRES</a></li>
+            <li><a href="infos.php#legal_information">MENTIONS LÉGALES</a></li>
+            <li><a href="infos.php#about">À PROPOS</a></li>
         </ul>
         <img src="images/fleche.svg">
     </nav>
