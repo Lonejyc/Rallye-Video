@@ -25,7 +25,7 @@
         <?php include("global/header.php") ?>
         <main>
             <div class="wrap">
-                <div>
+                <section>
                     <p>Le Rallye Vidéo commence dans</p>
                     <img src="images/logo_montre.svg">
                     <div id="countdown">
@@ -84,7 +84,7 @@
                         var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
                         initializeClock('countdown', deadline);
                     </script>
-                </div>
+                </section>
             </div>
         </main>
         <?php include("global/footer.php") ?>
