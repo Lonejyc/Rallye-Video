@@ -134,7 +134,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
 
                                         if ($row['rv_team_id'] === NULL) {
                                             // L'utilisateur n'a pas d'équipe, donc il peut s'inscrire
-                                            if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
+                                            if (isset($_POST['action']) && $_POST['action'] === 'confirm1') {
                                                 // Récupérer l'ID de l'équipe sélectionnée
                                                 $equipe_id = $_POST['equipe'];
 
@@ -173,7 +173,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
                                         </select>
                                     </div>
                                     <br>
-                                    <button type="submit" name="action" value="confirmation">OK</button>
+                                    <button type="submit" name="action" value="confirm1">OK</button>
                                     <div class="infos">
                                         <p>L'équipe n'existe pas encore ? </p>
                                         <button class="change normal">Inscrivez-la maintenant !</button>
