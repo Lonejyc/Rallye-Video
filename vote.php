@@ -14,18 +14,20 @@ require_once('connexion.php');
 $request = "SELECT * FROM rv_depot";
 
 if (isset($_POST['vote'])) {
-    $id_film = $_POST['id_film'];
-    $id_user = $_SESSION['user_id'];
+    $action = $_POST['vote'];
+    if ($action == "Voter") {
+        $id_film = $_POST['id_film'];
+        $id_user = $_SESSION['user_id'];
 
-    $req = "SELECT * FROM rv_votes WHERE rv_user_id = '$id_user'";
+        $req = "SELECT * FROM rv_votes WHERE rv_user_id = '$id_user'";
 
-    $result = mysqli_query($CONNEXION, $req);
-    if(mysqli_num_rows($result) >= 1){
-        echo "Vous avez déjà voté";
-        exit;
-    } else {
-        $req = "INSERT INTO rv_vote (id_film, id_user) VALUES ('$id_film', '$id_user')";
-        mysqli_query($CONNEXION, $req);
+        $result = mysqli_query($CONNEXION, $req);
+        if(mysqli_num_rows($result) >= 1){
+            $vote = "Vous avez déjà voté";
+        } else {
+            $req = "INSERT INTO rv_votes (rv_user_id, rv_depot_id) VALUES ('$id_user', '$id_film')";
+            mysqli_query($CONNEXION, $req);
+        }
     }
 }
 ?>
@@ -35,7 +37,7 @@ if (isset($_POST['vote'])) {
     <head>
         <?php require_once('connexion.php') ?>
 
-        <link href='css/style.css' rel='stylesheet'>
+        <link href='css/reset.css' rel='stylesheet'>
 
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">
@@ -48,12 +50,15 @@ if (isset($_POST['vote'])) {
         <main>
             <div>
                 <h1>Vote</h1>
+                <?php if(isset($vote)): ?>
+                <p><?php echo $vote; ?></p>
+                <?php endif; ?>
                 <div class="films">
                     <?php if($rv_depot = mysqli_query($CONNEXION, $request)): ?>
                     <?php foreach($rv_depot as $rv_depot): ?>
                     <div class="film">
-                        <span class="affiche"><?php echo $rv_user['Affiche']; ?></span>
-                        <span class="nom"><?php echo $rv_user['Nom_film']; ?></span>
+                        <span class="affiche"><?php echo $rv_depot['Affiche']; ?></span>
+                        <span class="nom"><?php echo $rv_depot['Nom_film']; ?></span>
                         <form action="#" method="POST">
                             <input type="hidden" name="id_film" value="<?php echo $rv_depot['id']; ?>">
                             <input type="submit" name="vote" value="Voter">
