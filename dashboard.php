@@ -70,8 +70,8 @@
                         <h2>Changer le mot de passe</h2>
                         <form action="dashboard.php" method="post">
                             <input type="password" name="password" id="password" placeholder="Mot de passe actuel" required>
-                            <input type="password" name="new_password" id="new_password" placeholder="Nouveau mot de passe" required>
-                            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmer le nouveau mot de passe" required>
+                            <input type="password" name="new_password" id="new_password" placeholder="Nouveau mot de passe" minlength="8" required>
+                            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmer le nouveau mot de passe" minlength="8" required>
                             <input type="submit" value="Changer le mot de passe">
                             <!-- <button type="submit" name="action" value="changement">Changer le mot de passe</button> -->
                         </form>
