@@ -1,8 +1,7 @@
 <header>
     <nav>
         <div class="logo">
-            <a href="index.php"><h1>Rallye video</h1>
-            <img src="images/logo.svg"></a>
+            <a href="index.php"><img src="images/logo_cam.svg"><p>Rallye video</p></a>
         </div>
         <ul>
             <li><a href="evenement.php">Événement</a></li>

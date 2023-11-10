@@ -1,10 +1,11 @@
-<?php 
+<?php
+    // Lancement de la session
     session_start();
 
     $user_id = $_SESSION['user_id'];
 
     // Connexion à la base de données
-    $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
+    $connect = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
 
     // Check connection
     if ($connect->connect_error) {
@@ -39,24 +40,29 @@
 ?>
 
 <!DOCTYPE html>
+<!-- Partie HTML de la page -->
 <html>
+    <!-- Section Head de la page HTML -->
     <head>
         <?php require_once('connexion.php') ?>
-
+        <!-- Lien Logo -->
+	    <link rel="icon" type="image/x-icons" href="images/logo_cam.svg">
+        <!-- Lien CSS -->
         <link href="css/reset.css" rel="stylesheet">
+        <link href="css/wrap.css" rel="stylesheet">
         <link href="css/header.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
-
+        <!-- Encodage en UTF-8 -->
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">
-
-        <title>Rallye Video</title>
+        <!-- Titre de la page web -->
+        <title>Rallye Video - Tableau de Bord</title>
     </head>
-
+    <!-- Section Body de la page HTML -->
     <body>
-        <div class="wrap">
-            <?php include("Global/header.php") ?>
-            <main>
+        <?php include("global/header.php") ?>
+        <main>
+            <div class="wrap">
                 <h1>Dashboard</h1>
                 <a href='se_deconnecter.php'><span class="decon">Déconnexion</span></a>
                 <section class="profil">
@@ -82,7 +88,7 @@
                     <?php
                         function changePassword($user_id, $current_password, $new_password) {
                             // Connexion à la base de données
-                            $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
+                            $connect = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
 
                             // Check connection
                             if ($connect->connect_error) {
@@ -133,8 +139,8 @@
                         }
                     ?>
                 </section>
-            </main>
-            <?php include("Global/footer.php") ?>
-        
+            </div>
+        </main>
+        <?php include("global/footer.php") ?>
     </body>
 </html>

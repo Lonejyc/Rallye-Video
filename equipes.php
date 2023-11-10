@@ -1,3 +1,4 @@
+<!-- Lancement de la session  -->
 <?php session_start(); ?>
 
 <?php
@@ -7,7 +8,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
     $nomEquipe = $_POST['nom_equipe'];
 
     // Connexion à la base de données (assurez-vous de configurer la connexion à votre base de données)
-    $CONNEXION = mysqli_connect('localhost', 'root', '', 'rallyevideo');
+    $CONNEXION = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
 
     // Vérifie si la connexion à la base de données a réussi
     if ($CONNEXION) {
@@ -67,24 +68,29 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
 ?>
 
 <!DOCTYPE html>
+<!-- Partie HTML de la page -->
 <html>
+    <!-- Section Head de la page HTML -->
     <head>
         <?php require_once('connexion.php') ?>
-
+        <!-- Lien Logo -->
+	    <link rel="icon" type="image/x-icons" href="images/logo_cam.svg">
+        <!-- Lien CSS -->
         <link href="css/reset.css" rel="stylesheet">
+        <link href="css/wrap.css" rel="stylesheet">
         <link href="css/header.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
-
+        <!-- Encodage en UTF-8 -->
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">
-
-        <title>Rallye Video</title>
+        <!-- Titre de la page web -->
+        <title>Rallye Video - Equipes</title>
     </head>
-
+    <!-- Section Body de la page HTML -->
     <body>
-        <div class="wrap">
-            <?php include("Global/header.php") ?>
-            <main>
+        <?php include("Global/header.php") ?>
+        <main>
+            <div class="wrap">
                 <h1>Équipes</h1>
                 <div class="list">
                     <h2>Listes des équipes</h2>
@@ -244,8 +250,8 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
                         </div>
                     </div>
                 <script src="script/flipcard.js"></script>
-            </main>
-            <?php include("Global/footer.php") ?>
-        </div>
+            </div>
+        </main>
+        <?php include("Global/footer.php") ?>
     </body>    
 </html>
