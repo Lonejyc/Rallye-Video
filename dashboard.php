@@ -73,7 +73,7 @@
                     <?php if (isset($team)) { ?>
                     <p><span class="bold">Team:</span> <?php echo $team; ?></p>
                     <?php } else { ?>
-                    <p><span class="bold">Team:</span> Aucune team</p>
+                    <p><span class="bold">Team:</span> Aucune team. Pour en rejoindre une, <a href="equipes.php">cliquez ici</a></p>
                     <?php } ?>
                 </section>
                 <section class="mdp">
