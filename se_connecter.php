@@ -124,7 +124,7 @@ if(isset($_POST['action'])) {
                     </div>
                 </section>
             </div>
-            <script src="script/flipcard.js"></script>
+            <script src="js/flipcard.min.js"></script>
         </main>
         <?php include("Global/footer.php") ?>
     </body>
