@@ -63,7 +63,7 @@
                         <?php if (isset($team)) { ?>
                         <p><span class="bold">Team:</span> <?php echo $team; ?></p>
                         <?php } else { ?>
-                        <p><span class="bold">Team:</span> Aucune. Si vous voulez rejoindre une équipe, cliquez <a href="equipes.php">ici</a></p>
+                        <p><span class="bold">Team:</span> Aucune. Si vous voulez rejoindre une équipe, cliquez <a href="equipes.php">ici</a>.</p>
                         <?php } ?>
                     </section>
                     <section class="psd" aria-label="Changement de mot de passe">
