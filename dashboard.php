@@ -4,7 +4,7 @@
     $user_id = $_SESSION['user_id'];
 
     // Connexion à la base de données
-    $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
+    $connect = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
 
     // Check connection
     if ($connect->connect_error) {
@@ -35,50 +35,54 @@
             }
         } else echo "Aucun résultats";
     }
-
     $connect->close();
 ?>
 
 <!DOCTYPE html>
-    <html>
-        <head>
-                <link href="css/reset.css" rel="stylesheet">
-                <link href="css/header.css" rel="stylesheet">
-                <link href="css/footer.css" rel="stylesheet">
-                <meta charset="utf-8"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <title>Rallye Video</title>
-        </head>
+<html>
+    <head>
+        <?php require_once('connexion.php') ?>
 
-        <body>
-                <?php include("Global/header.php") ?>
-                <main>
-                    <h1>Dashboard</h1>
-                    <a href='se_deconnecter.php'><span class="decon">Déconnexion</span></a>
-                    <section class="profil" aria-label="Profil personnel">
-                        <h2>Information du profil</h2>
-                        <p><span class="bold">Nom:</span> <?php echo $nom; ?></p>
-                        <p><span class="bold">Prénom:</span> <?php echo $prenom; ?></p>
-                        <p><span class="bold">Email:</span> <?php echo $mail; ?></p>
-                        <?php if (isset($team)) { ?>
-                        <p><span class="bold">Team:</span> <?php echo $team; ?></p>
-                        <?php } else { ?>
-                        <p><span class="bold">Team:</span> Aucune. Si vous voulez rejoindre une équipe, cliquez <a href="equipes.php">ici</a>.</p>
-                        <?php } ?>
-                    </section>
-                    <section class="psd" aria-label="Changement de mot de passe">
-                        <h2>Changer le mot de passe</h2>
-                        <form action="dashboard.php" method="post">
-                            <input type="password" name="password" id="password" placeholder="Mot de passe actuel" required>
-                            <input type="password" name="new_password" id="new_password" placeholder="Nouveau mot de passe" minlength="8" required>
-                            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmer le nouveau mot de passe" minlength="8" required>
-                            <input type="submit" value="Changer le mot de passe">
-                            <!-- <button type="submit" name="action" value="changement">Changer le mot de passe</button> -->
-                        </form>
-                        <?php
+        <link href="css/reset.css" rel="stylesheet">
+        <link href="css/header.css" rel="stylesheet">
+        <link href="css/footer.css" rel="stylesheet">
+
+        <meta charset="UTF-8">
+        <meta name="author" content="Rallye Video">
+
+        <title>Rallye Video</title>
+    </head>
+
+    <body>
+        <div class="wrap">
+            <?php include("Global/header.php") ?>
+            <main>
+                <h1>Dashboard</h1>
+                <a href='se_deconnecter.php'><span class="decon">Déconnexion</span></a>
+                <section class="profil">
+                    <h2>Information du profil</h2>
+                    <p><span class="bold">Nom:</span> <?php echo $nom; ?></p>
+                    <p><span class="bold">Prénom:</span> <?php echo $prenom; ?></p>
+                    <p><span class="bold">Email:</span> <?php echo $mail; ?></p>
+                    <?php if (isset($team)) { ?>
+                    <p><span class="bold">Team:</span> <?php echo $team; ?></p>
+                    <?php } else { ?>
+                    <p><span class="bold">Team:</span> Aucune team</p>
+                    <?php } ?>
+                </section>
+                <section class="mdp">
+                    <h2>Changer le mot de passe</h2>
+                    <form action="dashboard.php" method="post">
+                        <input type="password" name="password" id="password" placeholder="Mot de passe actuel" required>
+                        <input type="password" name="new_password" id="new_password" placeholder="Nouveau mot de passe" required>
+                        <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmer le nouveau mot de passe" required>
+                        <input type="submit" value="Changer le mot de passe">
+                        <!-- <button type="submit" name="action" value="changement">Changer le mot de passe</button> -->
+                    </form>
+                    <?php
                         function changePassword($user_id, $current_password, $new_password) {
                             // Connexion à la base de données
-                            $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
+                            $connect = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
 
                             // Check connection
                             if ($connect->connect_error) {
@@ -98,7 +102,7 @@
                                 echo "0 results";
                             }
 
-                            // Verify current password
+                                // Verify current password
                             if (password_verify($current_password, $mdp)) {
                                 // Hash new password
                                 $new_mdp = password_hash($new_password, PASSWORD_DEFAULT);
@@ -113,7 +117,6 @@
                             } else {
                                 echo "Le mot de passe actuel est incorrect";
                             }
-
                             $connect->close();
                         }
 
@@ -128,9 +131,10 @@
                                 changePassword($user_id, $current_password, $new_password);
                             }
                         }
-                        ?>
-                    </section>
-                </main>
-                <?php include("Global/footer.php") ?>
-        </body>
+                    ?>
+                </section>
+            </main>
+            <?php include("Global/footer.php") ?>
+        
+    </body>
 </html>

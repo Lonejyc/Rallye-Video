@@ -5,14 +5,14 @@ session_start();
 if(isset($_POST['action'])) {
     $action = $_POST['action'];
     if($action == 'inscription') {
-        if(!empty($_POST['name']) AND !empty($_POST['firstName']) AND !empty($_POST['mail']) AND !empty($_POST['password'])) {
-            $nom = $_POST['name'];
-            $prenom = $_POST['firstName'];
+        if(!empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['mail']) AND !empty($_POST['password'])) {
+            $nom = $_POST['nom'];
+            $prenom = $_POST['prenom'];
             $mail = $_POST['mail'];
             $mdp = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encrypt the password
 
             // Connexion à la base de données
-            $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
+            $connect = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
 
             // Vérifie si la connexion a réussi
             if (!$connect) {
@@ -24,25 +24,21 @@ if(isset($_POST['action'])) {
 
             // Exécute la requête SQL
             if (mysqli_query($connect, $request)) {
-                $succes2 = "Votre compte a été créé avec succès";
-                $user_id = mysqli_insert_id($connect); // Récupère l'ID de l'utilisateur inséré
-                $_SESSION['user_id'] = $user_id; // Stocke l'ID de l'utilisateur dans la session
-                header('Location: dashboard.php'); // Redirige l'utilisateur vers la page de tableau de bord
-                exit();
+                $succes = "Votre compte a été créé avec succès";
             } else {
                 echo "Erreur : " . mysqli_error($connect);
             }
 
             // Ferme la connexion à la base de données
             mysqli_close($connect);
-        } else $erreur2 = "Veuillez remplir tout les champs";
+        } else $erreur = "Veuillez remplir tout les champs";
     } else if($action == 'connexion') {
         if(!empty($_POST['mail']) AND !empty($_POST['password'])) {
             $mail = $_POST['mail'];
             $mdp = $_POST['password'];
 
             // Connexion à la base de données
-            $connect = mysqli_connect('192.168.135.113', 'boullayt', '!decOrgyu159', 'boullayt');
+            $connect = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
             
             // Vérifie si la connexion a réussi
             if (!$connect) {
@@ -63,10 +59,10 @@ if(isset($_POST['action'])) {
                         header('Location: dashboard.php');
                         exit();
                     } else {
-                        $erreur1 = "Mot de passe incorrect";
+                        $erreur = "Mot de passe incorrect";
                     }
                 } else {
-                    $erreur1 = "Utilisateur introuvable";
+                    $erreur = "Utilisateur introuvable";
                 }
             } else {
                 echo "Erreur : " . mysqli_error($connect);
@@ -74,7 +70,7 @@ if(isset($_POST['action'])) {
 
             // Ferme la connexion à la base de données
             mysqli_close($connect);
-        } else $erreur1 = "Veuillez remplir tout les champs";
+        } else $erreur = "Veuillez remplir tout les champs";
     }
 }
 ?>
@@ -96,45 +92,42 @@ if(isset($_POST['action'])) {
         <?php include("Global/header.php") ?>
         <main>
             <div class="wrap">
+            <?php if(isset($succes)) {?>
+                <span class="succes"><?php echo $succes ?></span>
+            <?php } if(isset($erreur)) {?>
+                <span class="erreur" ><?php echo $erreur ?></span>
+            <?php } ?>
                 <h1>Connexion</h1>
-                <section class="container">
+                <div class="container">
                     <div class="card">
                         <div class="conne">
-                            <?php if(isset($erreur1)) {?>
-                                <span class="error" ><?php echo $erreur1 ?></span>
-                            <?php } ?>
                             <form method="POST" action="#">
                                 <h2>Connexion</h2>
                                 <input type="text" name="mail" placeholder="Mail" autocomplete="off" required>
                                 <input type="password" name="password" placeholder="Mot de passe" autocomplete="off" required>
                                 <button type="submit" name="action" value="connexion" class="submit">Connexion</button>
                             </form>
-                            <section class="infos" aria-label="Informations">
+                            <div class="infos">
                                 <p>Nouveau ici ?</p>
                                 <button class="change normal">S'inscrire</button>
-                            </section>
+                            </div>
                         </div>
                         <div class="inscr">
-                        <?php if(isset($succes2)) {?>
-                            <span class="succes"><?php echo $succes2 ?></span>
-                        <?php } if(isset($erreur2)) {?>
-                            <span class="error" ><?php echo $erreur2 ?></span>
-                        <?php } ?>
                             <form method="POST" action="#">
                                 <h2>Inscription</h2>
-                                <input type="text" name="name" placeholder="Nom" required>
-                                <input type="text" name="firstName" placeholder="Prénom" required>
+                                <input type="text" name="nom" placeholder="Nom" required>
+                                <input type="text" name="prenom" placeholder="Prénom" required>
                                 <input type="text" name="mail" placeholder="Mail" required>
                                 <input type="password" name="password" placeholder="Mot de Passe" minlength="8" required>
                                 <button type="submit" name="action" value="inscription" class="submit">S'inscrire</button>
                             </form>
-                            <section class="infos" aria-label="Informations">
+                            <div class="infos">
                                 <p>Déjà inscrit ?</p>
                                 <button class="change reverse">Se connecter</button>
-                            </section>
+                            </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
             <script src="script/flipcard.js"></script>
         </main>
