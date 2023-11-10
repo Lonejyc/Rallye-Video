@@ -8,6 +8,11 @@ if(isset($_POST['action'])) {
             $nom = $_POST['name'];
             $prenom = $_POST['firstName'];
             $mail = $_POST['mail'];
+            // Vérifie si l'adresse e-mail se termine par les domaines souhaités
+            $domain = substr(strrchr($mail, "@"), 1); // Récupère le domaine de l'adresse e-mail
+            if ($domain != "etu.univ-smb.fr" && $domain != "etu.univ-savoie.fr") {
+                $erreur2 = "L'adresse e-mail doit se terminer par etu.univ-smb.fr ou etu.univ-savoie.fr";
+            }
             $mdp = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encrypt the password
             // Connexion à la base de données
             $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
@@ -112,7 +117,7 @@ if(isset($_POST['action'])) {
                                 <h2>Inscription</h2>
                                 <input type="text" name="name" placeholder="Nom" required>
                                 <input type="text" name="firstName" placeholder="Prénom" required>
-                                <input type="text" name="mail" placeholder="Mail" required>
+                                <input type="text" name="mail" placeholder="Mail universitaire" required>
                                 <input type="password" name="password" placeholder="Mot de Passe" minlength="8" required>
                                 <button type="submit" name="action" value="inscription" class="submit">S'inscrire</button>
                             </form>
