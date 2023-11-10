@@ -7,7 +7,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
     $nomEquipe = $_POST['nom_equipe'];
 
     // Connexion à la base de données (assurez-vous de configurer la connexion à votre base de données)
-    $CONNEXION = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
+    $CONNEXION = mysqli_connect('localhost', 'root', '', 'rallyevideo');
 
     // Vérifie si la connexion à la base de données a réussi
     if ($CONNEXION) {
