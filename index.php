@@ -42,7 +42,7 @@
                             <div class="unite">Minutes</div>
                         </div>
                     </div>
-                    <script src="countdown.js"></script>
+                    <script src="js/countdown.js"></script>
                 </section>
             </div>
         </main>
