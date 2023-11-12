@@ -12,8 +12,7 @@ document.querySelectorAll('.tempsRestant').forEach((objectEl) => {;
     const uneHeure = 60 * 60 * 1000;
     const uneMinute = 60 * 1000;
 
-    //const newYear = new Date('2024-01-26T16:00:00');
-    const newYear = Date.now() -dateOffset * uneMinute + 10000;
+    const newYear = new Date('2024-01-26T16:00:00');
 
     const getCountdown = () => {
         let nowDate = Date.now();
@@ -40,8 +39,7 @@ document.querySelectorAll('.tempsRestant').forEach((objectEl) => {;
             titleEL.textContent = "Le Rallye vidéo a commencé !";
         }
     };
-});
-
     let countdownInterval = setInterval(getCountdown, 1000);
 
     getCountdown();
+});
