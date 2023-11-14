@@ -62,3 +62,11 @@
     font-style: normal;
 }
 
+:root {
+    --bleuGris: #7D9EA7;
+    --gris: #5E5E70;
+    --noir: #1D1D1B;
+    --crème: #FBE7C2;
+    --orange: #E46B36;
+    --blanc: #FFF;
+}
