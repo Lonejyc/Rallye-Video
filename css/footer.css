@@ -4,8 +4,29 @@
 /* Ajout des styles */
 footer {
     width: 100%;
-    height: 100%;
+    height: 100px;
     background: var(--bleuGris);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+footer nav ul li {
+    display: flex;
+    margin-right: 190px;
 }
 
 footer nav ul li a {
@@ -14,4 +35,36 @@ footer nav ul li a {
     font-size: 1.2em;
     color: var(--blanc);
     text-decoration: none;
+}
+
+footer nav .arrow {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    background: var(--blanc);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease-in-out;
+}
+
+footer nav .arrow a {
+    transition: .3s ease-in-out;
+}
+
+footer nav .arrow:hover {
+    background: var(--crème);
+}
+
+footer nav .arrow:hover a{
+    transform: translateY(-2px);
+}
+
+footer p {
+    color: var(--blanc);
+    font-size: 12px;
+    font-family: Gotham;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
 }
