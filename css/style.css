@@ -5,3 +5,7 @@
 .succes {
     color: green;
 }
+
+html {
+    scroll-behavior: smooth;
+}

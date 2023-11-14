@@ -5,7 +5,9 @@
             <li><a href="infos.php#legal_information">MENTIONS LÉGALES</a></li>
             <li><a href="infos.php#about">À PROPOS</a></li>
         </ul>
-        <img src="images/fleche.svg">
     </nav>
+    <div class="arrow">
+            <a href="#top"><img src="images/arrow.svg"></a>
+        </div>
     <p>Copyright © Rallye Vidéo MMI 2023-2024</p>
 </footer>
