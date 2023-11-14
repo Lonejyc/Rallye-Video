@@ -37,7 +37,7 @@ footer nav ul li a {
     text-decoration: none;
 }
 
-footer nav .arrow {
+footer .arrow {
     width: 40px;
     height: 40px;
     display: flex;
@@ -48,15 +48,15 @@ footer nav .arrow {
     transition: .3s ease-in-out;
 }
 
-footer nav .arrow a {
+footer .arrow a {
     transition: .3s ease-in-out;
 }
 
-footer nav .arrow:hover {
+footer .arrow:hover {
     background: var(--crème);
 }
 
-footer nav .arrow:hover a{
+footer .arrow:hover a{
     transform: translateY(-2px);
 }
 

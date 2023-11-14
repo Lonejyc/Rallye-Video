@@ -7,7 +7,7 @@
         </ul>
     </nav>
     <div class="arrow">
-            <a href="#top"><img src="images/arrow.svg"></a>
-        </div>
+        <a href="#top"><img src="images/arrow.svg"></a>
+    </div>
     <p>Copyright © Rallye Vidéo MMI 2023-2024</p>
 </footer>
