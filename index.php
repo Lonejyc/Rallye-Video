@@ -25,26 +25,25 @@
         <?php include("global/header.php") ?>
         <main>
             <div class="wrap">
-                <div>
-                    <p>Le Rallye Vidéo commence dans</p>
+                <section class="tempsRestant">
+                    <p class="title">Le Rallye Vidéo commence dans</p>
                     <img src="images/logo_montre.svg">
-                    <div>
-                        <p>0</p>
-                        <p>0</p>
-                        <p>Jours</p>
+                    <div class="countdown">
+                        <div class="box">
+                            <span class="days"></span>
+                            <div class="unite">Jours</div>
+                        </div>
+                        <div class="box">
+                            <span class="hours"></span>
+                            <div class="unite">Heures</div>
+                        </div>
+                        <div class="box">
+                            <span class="minutes"></span>
+                            <div class="unite">Minutes</div>
+                        </div>
                     </div>
-                    <div>
-                        <p>0</p>
-                        <p>0</p>
-                        <p>Heures</p>
-                    </div>
-                    <div>
-                        <p>0</p>
-                        <p>0</p>
-                        <p>Minutes</p>
-                    </div>
-                </div>
-                <p>Annimation Bannière à faire</p>
+                    <script src="js/countdown.js"></script>
+                </section>
             </div>
         </main>
         <?php include("global/footer.php") ?>
