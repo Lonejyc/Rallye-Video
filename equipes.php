@@ -88,7 +88,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
     </head>
     <!-- Section Body de la page HTML -->
     <body>
-        <?php include("Global/header.php") ?>
+        <?php include("global/header.php") ?>
         <main>
             <div class="wrap">
                 <h1>Équipes</h1>
@@ -221,6 +221,6 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
                 <script src="js/flipcard.min.js"></script>
             </div>
         </main>
-        <?php include("Global/footer.php") ?>
+        <?php include("global/footer.php") ?>
     </body>    
 </html>
