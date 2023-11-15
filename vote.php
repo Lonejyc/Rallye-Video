@@ -41,7 +41,7 @@ if (isset($_POST['vote'])) {
         <title>Rallye Video</title>
     </head>
     <body>
-        <?php include("Global/header.php") ?>
+        <?php include("global/header.php") ?>
         <main>
             <div>
                 <h1>Vote</h1>
@@ -64,6 +64,6 @@ if (isset($_POST['vote'])) {
                 </div>
             </div>
         </main>
-        <?php include("Global/footer.php") ?>
+        <?php include("global/footer.php") ?>
     </body>
 </html>

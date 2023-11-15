@@ -47,7 +47,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
     <!-- Section Body de la page HTML -->
     <body>
         <div class="wrap">
-            <?php include("Global/header.php") ?>
+            <?php include("global/header.php") ?>
             <main>
                 <h1>Gestion des données</h1>
                 <section class="addFilm" aria-label="Ajout de films">
@@ -114,7 +114,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
                     </table>
                 </section>
             </main>
-            <?php include("Global/footer.php") ?>
+            <?php include("global/footer.php") ?>
         </div>
     </body>
 

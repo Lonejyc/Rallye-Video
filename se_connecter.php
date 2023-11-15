@@ -86,7 +86,7 @@ if(isset($_POST['action'])) {
         <title>Rallye Video</title>
     </head>
     <body>
-        <?php include("Global/header.php") ?>
+        <?php include("global/header.php") ?>
         <main>
             <div class="wrap">
                 <h1>Connexion</h1>
@@ -131,7 +131,7 @@ if(isset($_POST['action'])) {
             </div>
             <script src="js/flipcard.min.js"></script>
         </main>
-        <?php include("Global/footer.php") ?>
+        <?php include("global/footer.php") ?>
     </body>
     
 </html>
