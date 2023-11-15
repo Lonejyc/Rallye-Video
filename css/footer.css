@@ -22,15 +22,16 @@ footer nav ul {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 190px;
 }
 
 footer nav ul li {
     display: flex;
-    margin-right: 190px;
 }
 
 footer nav ul li a {
     font-family: 'Gotham';
+    font-style: normal;
     font-weight: 500;
     font-size: 1.2em;
     color: var(--blanc);
