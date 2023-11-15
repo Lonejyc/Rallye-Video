@@ -6,8 +6,8 @@
             <li><a href="infos.php#about">À PROPOS</a></li>
         </ul>
     </nav>
-    <div class="arrow">
-        <a href="#top"><img src="images/arrow.svg"></a>
-    </div>
+    <a href="#top" class="arrow">
+        <img src="images/arrow.svg">
+    </a>
     <p>Copyright © Rallye Vidéo MMI 2023-2024</p>
 </footer>

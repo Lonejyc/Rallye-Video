@@ -58,6 +58,7 @@ header nav .right li a {
     font-style: italic;
     color: var(--blanc);
     padding : 0 1em;
+    transition: .3s ease-in-out;
 }
 
 header nav .right li a:hover {
