@@ -56,7 +56,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
     </head>
     <!-- Section Body de la page HTML -->
     <body>
-            <?php include("global/header.php") ?>
+        <?php include("global/header.php") ?>
         <main>
             <div class="wrap">
                 <h1>Gestion des données</h1>
