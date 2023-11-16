@@ -1,23 +1,6 @@
-body {
-    font-family: 'Gotham', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
 h1, h2 {
-    font-family: 'Kaviron', Arial, sans-serif;
+    font-family: 'Kaviron';
     color: #1a1a1a;
-}
-
-main {
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
 }
 
 section {
@@ -55,13 +38,25 @@ input[type="file"] {
 }
 
 button {
-    background-color: #4caf50;
+    background-color: var(--orange);
     color: #fff;
     cursor: pointer;
+    width: 300px;
+    height: 50px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 0.9rem;
+    border: none;
+    font-family: Gotham;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    transition: .3s ease-in-out;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #CE4B12;
 }
 
 table {
@@ -77,7 +72,7 @@ th, td {
 }
 
 th {
-    background-color: #4caf50;
+    background-color: var(--bleuGris);
     color: #fff;
 }
 

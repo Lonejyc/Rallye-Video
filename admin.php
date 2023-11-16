@@ -62,7 +62,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
         <?php include("global/header.php") ?>
         <main>
             <div class="wrap">
-                <h1>Gestion des données</h1>
+                <h1 class="gest">Gestion des données</h1>
                 <section class="addFilm" aria-label="Ajout de films">
                     <h2>Ajout de films</h2>
                     <?php if(isset($succes1)) {?>
