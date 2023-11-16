@@ -8,23 +8,21 @@ if (!isset($_SESSION['user_id'])) {
     exit; // Arrêtez le script
 }
 require_once('connexion.php');
-$request = "SELECT * FROM rv_depot";
 
 if (isset($_POST['vote'])) {
     $action = $_POST['vote'];
-    if ($action == "Voter") {
+    if ($action == "VOTER") {
         $id_film = $_POST['id_film'];
         $id_user = $_SESSION['user_id'];
 
         $req = "SELECT * FROM rv_votes WHERE rv_user_id = '$id_user'";
-
         $result = mysqli_query($CONNEXION, $req);
         if(mysqli_num_rows($result) >= 1){
-            $vote = "Vous avez déjà voté";
+            $error = "Vous avez déjà voté";
         } else {
             $req = "INSERT INTO rv_votes (rv_user_id, rv_depot_id) VALUES ('$id_user', '$id_film')";
             mysqli_query($CONNEXION, $req);
-            $vote = "Merci d'avoir voté";
+            $succes = "Merci d'avoir voté";
         }
     }
 }
@@ -56,19 +54,24 @@ if (isset($_POST['vote'])) {
         <main>
             <div class="wrap">
                 <h1>Vote</h1>
-                <?php if(isset($vote)): ?>
-                <p><?php echo $vote; ?></p>
-                <?php endif; ?>
+                <?php if(isset($error)) {?>
+                <p class="erreur"><?php echo $error; ?></p>
+                <?php } else if(isset($succes)) {?>
+                    <p class="succes"><?php echo $succes; ?></p>
+                <?php } ?>
+                <?php $request = "SELECT * FROM rv_depot"; ?>
                 <div class="films">
                     <?php if($rv_depot = mysqli_query($CONNEXION, $request)): ?>
                     <?php foreach($rv_depot as $rv_depot): ?>
                     <div class="film">
-                        <div class="affiche"><img src="images/<?php echo $rv_depot['Affiche']; ?>" alt="<?php echo $rv_depot['Affiche']; ?>"/></div>
-                        <span class="nom"><?php echo $rv_depot['Nom_film']; ?></span>
-                        <form action="#" method="POST">
-                            <input type="hidden" name="id_film" value="<?php echo $rv_depot['id']; ?>">
-                            <input type="submit" name="vote" value="Voter">
-                        </form>
+                        <div class="affiche">
+                            <img src="images/<?php echo $rv_depot['Affiche']; ?>" alt="<?php echo $rv_depot['Affiche']; ?>"/>
+                            <form action="#" method="POST">
+                                <input type="hidden" name="id_film" value="<?php echo $rv_depot['id']; ?>">
+                                <input type="submit" name="vote" value="VOTER">
+                            </form>
+                        </div>
+                        <p class="nom"><?php echo $rv_depot['Nom_film']; ?></p>
                     </div>
                     <?php endforeach; ?>
                     <?php endif; ?>

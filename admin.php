@@ -126,7 +126,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
                         <?php foreach($films as $film): ?>
                         <tr>
                             <td><?php echo $film['Nom_film']; ?></td>
-                            <td><?php if($film['Nombre de votes'] == 1) {echo "0";} else {echo $film['Nombre de votes'];} ?></td>
+                            <td><?php echo $film['Nombre de votes']; ?></td>
                         </tr>
                         <?php endforeach; ?>
                     </table>
