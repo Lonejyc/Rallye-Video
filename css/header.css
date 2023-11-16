@@ -68,8 +68,8 @@ header nav ul {
 
 .right li a {
     font-family: 'Gotham';
-    font-weight: bold;
-    font-style: italic;
+    font-weight: 500;
+    font-style: normal;
     padding : 0 2em 0 2em;
 }
 

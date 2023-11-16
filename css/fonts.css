@@ -8,6 +8,22 @@
 
 @font-face {
     font-family: 'Gotham';
+    src: url('Gotham-LightItalic.woff2') format('woff2'),
+        url('Gotham-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Gotham-Medium.woff2') format('woff2'),
+        url('Gotham-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
     src: url('Gotham-MediumItalic.woff2') format('woff2'),
         url('Gotham-MediumItalic.woff') format('woff');
     font-weight: 500;
@@ -27,38 +43,6 @@
     src: url('Gotham-Black.woff2') format('woff2'),
         url('Gotham-Black.woff') format('woff');
     font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Gotham';
-    src: url('Gotham-LightItalic.woff2') format('woff2'),
-        url('Gotham-LightItalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Gotham';
-    src: url('Gotham-Light.woff2') format('woff2'),
-        url('Gotham-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Gotham';
-    src: url('Gotham-Medium.woff2') format('woff2'),
-        url('Gotham-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Gotham';
-    src: url('Gotham-Bold.woff2') format('woff2'),
-        url('Gotham-Bold.woff') format('woff');
-    font-weight: bold;
     font-style: normal;
 }
 
