@@ -42,12 +42,15 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
 <html>
     <!-- Section Head de la page HTML -->
     <head>
-
+        <?php require_once('connexion.php') ?>
+        <!-- Lien Logo -->
+	    <link rel="icon" type="image/x-icons" href="images/logo_cam.svg">
+        <!-- Lien CSS -->
         <link href="css/reset.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-        <link href="css/admin.css" rel="stylesheet">
         <link href="css/header.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
+        <link href="css/admin.css" rel="stylesheet">
         <!-- Encodage en UTF-8 -->
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">
