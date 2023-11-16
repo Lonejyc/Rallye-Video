@@ -5,7 +5,7 @@
     $user_id = $_SESSION['user_id'];
 
     // Connexion à la base de données
-    $connect = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
+    $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
 
     // Check connection
     if ($connect->connect_error) {
@@ -88,7 +88,7 @@
                     <?php
                         function changePassword($user_id, $current_password, $new_password) {
                             // Connexion à la base de données
-                            $connect = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
+                            $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
 
                             // Check connection
                             if ($connect->connect_error) {
