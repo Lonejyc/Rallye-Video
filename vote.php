@@ -3,7 +3,7 @@ session_start();
 // Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
     // Si l'utilisateur n'est pas connecté, affichez un message et empêchez-le de voter.
-    echo "Vous devez vous connecter pour voter";
+    echo "Vous devez vous connecter pour voter\n";
     echo "<a href='se_connecter.php'>Connexion</a>";
     exit; // Arrêtez le script
 }
