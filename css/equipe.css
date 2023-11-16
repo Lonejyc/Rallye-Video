@@ -1,38 +1,3 @@
-/* Réinitialisation des marges et des paddings pour l'ensemble des éléments */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Style pour le corps de la page */
-body {
-    font-family: Arial, sans-serif; /* Police par défaut */
-    line-height: 1.6;
-    background-color: #f4f4f4;
-}
-
-/* Style pour l'en-tête */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    margin-bottom: 10px;
-    font-size: 2em;
-}
-
-/* Style pour la section principale */
-main {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-}
-
 /* Style pour la liste des équipes */
 .list {
     margin-bottom: 20px;
