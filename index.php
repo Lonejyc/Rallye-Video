@@ -15,6 +15,8 @@
         <link href="css/header.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
         <link href="css/index.css" rel="stylesheet">
+        <!-- Lien JS -->
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
         <!-- Encodage en UTF-8 -->
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">
@@ -27,8 +29,10 @@
         <main>
             <div class="wrap">
                 <section class="tempsRestant">
+                    <div class="lottie">
+                        <dotlottie-player src="anim/WaitingAnimation.lottie" background="transparent" speed="1" loop autoplay></dotlottie-player>
+                    </div>
                     <p class="title">Le Rallye Vidéo commence dans</p>
-                    <img src="images/logo_montre.svg">
                     <div class="countdown">
                         <div class="box">
                             <span class="days"></span>
@@ -44,6 +48,13 @@
                         </div>
                     </div>
                     <script src="js/countdown.min.js"></script>
+                </section>
+                <section class="bannière">
+                    <div class="bannièreText">
+                        <p>Rallye Vidéo</p>
+                        <img src="" alt="">
+                    </div>
+                    <img src="images/bannière.svg">
                 </section>
             </div>
         </main>

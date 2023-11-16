@@ -1,0 +1,21 @@
+
+
+main .wrap .tempsRestant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lottie {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lottie dotlottie-player {
+    transform: scale(1.45);
+}
