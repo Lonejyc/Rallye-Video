@@ -24,9 +24,9 @@ footer nav ul {
 }
 
 footer nav ul li a {
-    font-family: 'Arial';
+    font-family: 'Gotham';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 1.2em;
     color: var(--blanc);
     text-decoration: none;
@@ -66,8 +66,9 @@ footer .arrow:hover img{
 footer p {
     color: var(--blanc);
     font-size: .8em;
-    font-family: Gotham;
+    font-family: 'Gotham';
     font-weight: 300;
+    font-style: italic;
     display: flex;
     justify-content: center;
     margin-bottom: 18px;
