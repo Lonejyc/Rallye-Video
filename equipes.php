@@ -77,9 +77,10 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
 	    <link rel="icon" type="image/x-icons" href="images/logo_cam.svg">
         <!-- Lien CSS -->
         <link href="css/reset.css" rel="stylesheet">
-        <link href="css/wrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
         <link href="css/header.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
+        <link href="css/equipe.css" rel="stylesheet">
         <!-- Encodage en UTF-8 -->
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">

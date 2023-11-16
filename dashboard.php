@@ -5,7 +5,7 @@
     $user_id = $_SESSION['user_id'];
 
     // Connexion à la base de données
-    $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
+    $connect = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
 
     // Check connection
     if ($connect->connect_error) {
@@ -44,7 +44,7 @@
 <html>
     <!-- Section Head de la page HTML -->
     <head>
-        <?php require_once('connexion.php') ?>
+    <?php require_once('connexion.php') ?>
         <!-- Lien Logo -->
 	    <link rel="icon" type="image/x-icons" href="images/logo_cam.svg">
         <!-- Lien CSS -->
@@ -65,7 +65,6 @@
         <main>
             <div class="wrap">
                 <h1>Dashboard</h1>
-                <a href='se_deconnecter.php'><span class="decon">Déconnexion</span></a>
                 <section class="profil">
                     <h2>Information du profil</h2>
                     <p><span class="bold">Nom:</span> <?php echo $nom; ?></p>
@@ -74,7 +73,7 @@
                     <?php if (isset($team)) { ?>
                     <p><span class="bold">Team:</span> <?php echo $team; ?></p>
                     <?php } else { ?>
-                    <p><span class="bold">Team:</span> Aucune team. Pour en rejoindre une, <a href="equipes.php">cliquez ici</a></p>
+                    <p><span class="bold">Team:</span> Aucune team</p>
                     <?php } ?>
                 </section>
                 <section class="mdp">
@@ -89,7 +88,7 @@
                     <?php
                         function changePassword($user_id, $current_password, $new_password) {
                             // Connexion à la base de données
-                            $connect = mysqli_connect('localhost', 'root', '', 'rallyevideo');
+                            $connect = mysqli_connect('localhost', 'root', 'root', 'rallyevideo');
 
                             // Check connection
                             if ($connect->connect_error) {
@@ -140,6 +139,7 @@
                         }
                     ?>
                 </section>
+                <a href='se_deconnecter.php'><span class="decon">Déconnexion</span></a>
             </div>
         </main>
         <?php include("global/footer.php") ?>
