@@ -11,10 +11,10 @@
 	    <link rel="icon" type="image/x-icons" href="images/logo_cam.svg">
         <!-- Lien CSS -->
         <link href="css/reset.css" rel="stylesheet">
-        <link href="css/wrap.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <link href="css/header.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
         <!-- Encodage en UTF-8 -->
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">
@@ -43,7 +43,7 @@
                             <div class="unite">Minutes</div>
                         </div>
                     </div>
-                    <script src="js/countdown.js"></script>
+                    <script src="js/countdown.min.js"></script>
                 </section>
             </div>
         </main>

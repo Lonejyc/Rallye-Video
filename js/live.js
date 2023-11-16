@@ -1,91 +1,64 @@
-// Remplacez 'YOUR_API_KEY' par votre clé d'API YouTube
-const apiKey = 'AIzaSyD03L3Cvbq--FipuDu-u5uLvgbPRcwFDBk';
-// Remplacez 'YOUR_YOUTUBE_VIDEO_ID' par l'ID de votre vidéo YouTube
-const videoId = '4xDzrJKXOOY';
-let liveChatId;
+// Variables pour stocker l'ID de la vidéo YouTube et la clé API
+const videoId = 'vMRXc06uN2vmpwWU'; // Remplacez par l'ID de votre vidéo
+const apiKey = 'AIzaSyD03L3Cvbq--FipuDu-u5uLvgbPRcwFDBk'; // Remplacez par votre clé API
 
-function loadLiveChat() {
-    // Appel à l'API YouTube Data v3
-    fetch(`https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id=${videoId}&key=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-            liveChatId = data.items[0].liveStreamingDetails.activeLiveChatId;
-            startFetchingComments();
-        })
-        .catch(error => console.error('Erreur lors de la récupération des détails de la vidéo en direct:', error));
+// Fonction d'initialisation du lecteur vidéo
+function onYouTubeIframeAPIReady() {
+    new YT.Player('player', {
+        height: '360',
+        width: '640',
+        videoId: videoId,
+        events: {
+            'onReady': onPlayerReady,
+        }
+    });
 }
 
-function startFetchingComments() {
-    function fetchComments() {
-        // Récupération des messages du chat
-        fetch(`https://www.googleapis.com/youtube/v3/liveChat/messages?part=snippet&liveChatId=${liveChatId}&maxResults=10&key=${apiKey}`)
-            .then(response => response.json())
-            .then(chatData => {
-                const chatContainer = document.getElementById('comments');
-
-                // Nettoyer le conteneur avant d'ajouter de nouveaux messages
-                chatContainer.innerHTML = '';
-
-                chatData.items.forEach(item => {
-                    const message = item.snippet.displayMessage;
-                    const author = item.snippet.authorDisplayName;
-
-                    const chatMessage = document.createElement('p');
-                    chatMessage.textContent = `${author}: ${message}`;
-                    chatContainer.appendChild(chatMessage);
-                });
-            })
-            .catch(error => console.error('Erreur lors de la récupération des messages du chat:', error));
-    }
-
-    // Rafraîchit les commentaires toutes les secondes (1000 millisecondes)
-    setInterval(fetchComments, 1000);
-
-    // Charge les commentaires au chargement initial de la page
-    fetchComments();
+// Fonction appelée lorsque le lecteur est prêt
+function onPlayerReady(event) {
+    event.target.playVideo();
+    // Chargez les commentaires lorsque le lecteur est prêt
+    loadComments();
+    // Actualisez les commentaires toutes les 5 secondes (ajustable selon vos besoins)
+    setInterval(loadComments, 5000);
 }
 
-// Appeler la fonction pour charger le chat en direct
-loadLiveChat();
+// Fonction pour charger les commentaires
+function loadComments() {
+    // Utilisez l'API YouTube Data v3 pour récupérer les commentaires
+    $.get(
+        'https://www.googleapis.com/youtube/v3/commentThreads',
+        {
+            part: 'snippet',
+            videoId: videoId,
+            key: apiKey,
+            maxResults: 10,
+        },
+        function(data) {
+            displayComments(data.items);
+        }
+    );
+}
 
-const socket = io();
-socket.on('newComment', () => {
-    startFetchingComments();
-});
+// Fonction pour afficher les commentaires
+function displayComments(comments) {
+    var commentSection = $('#live-chat');
+    commentSection.empty(); // Efface les commentaires existants
 
-function sendMessage() {
-    const messageInput = document.getElementById('messageInput');
-    const message = messageInput.value.trim();
+    comments.forEach(function(comment) {
+        var commentText = comment.snippet.topLevelComment.snippet.textDisplay;
+        commentSection.append('<p>' + commentText + '</p>');
+    });
 
-    if (message !== '') {
-        // Envoyer le message directement à l'API YouTube (à mettre en œuvre)
-        // Notez que cela expose votre clé d'API, ce qui peut être un risque de sécurité
-        fetch(`https://www.googleapis.com/youtube/v3/liveChat/messages?part=snippet&liveChatId=${liveChatId}&key=${apiKey}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                snippet: {
-                    type: 'textMessageEvent',
-                    liveChatId: liveChatId,
-                    textMessageDetails: {
-                        messageText: message,
-                    },
-                },
-            }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Le message a été envoyé avec succès
-            console.log('Message envoyé avec succès:', data);
+    // Ajoutez un formulaire pour ajouter des commentaires (si nécessaire)
+    commentSection.append('<form id="comment-form"><textarea id="new-comment"></textarea><br/><button type="button" onclick="postComment()">Ajouter un commentaire</button></form>');
+}
 
-            // Rafraîchir les commentaires après l'envoi d'un nouveau message
-            socket.emit('newComment');
-        })
-        .catch(error => console.error('Erreur lors de l\'envoi du message:', error));
-
-        // Effacer le champ de saisie après l'envoi
-        messageInput.value = '';
-    }
+// Fonction pour poster un commentaire
+function postComment() {
+    var newComment = $('#new-comment').val();
+    // Vous pouvez implémenter l'envoi du commentaire à l'API YouTube ici avec une requête POST
+    // N'oubliez pas de gérer l'authentification avec votre clé API
+    // Cette fonction devrait être complétée selon vos besoins spécifiques
+    console.log('Nouveau commentaire à poster :', newComment);
 }
