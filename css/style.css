@@ -9,7 +9,7 @@
 }
 
 .succes {
-    color: green;
+    color: rgb(0, 210, 0);
 }
 
 html, body {
@@ -24,8 +24,6 @@ main {
 .wrap h1 {
     color: var(--crème);
     font-family: 'Kaviron';
-    font-weight: 500;
-    font-style: normal;
     font-size: 200%;
     margin: 1em 0 1em 0;
 }
