@@ -1,0 +1,9 @@
+.film .affiche {
+    width: 15vw;
+    height: 22.5vw;
+}
+
+.film .affiche img {
+    width: 100%;
+    height: 100%;
+}

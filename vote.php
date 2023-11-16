@@ -63,7 +63,7 @@ if (isset($_POST['vote'])) {
                     <?php if($rv_depot = mysqli_query($CONNEXION, $request)): ?>
                     <?php foreach($rv_depot as $rv_depot): ?>
                     <div class="film">
-                        <span class="affiche"><?php echo $rv_depot['Affiche']; ?></span>
+                        <div class="affiche"><img src="images/<?php echo $rv_depot['Affiche']; ?>" alt="<?php echo $rv_depot['Affiche']; ?>"/></div>
                         <span class="nom"><?php echo $rv_depot['Nom_film']; ?></span>
                         <form action="#" method="POST">
                             <input type="hidden" name="id_film" value="<?php echo $rv_depot['id']; ?>">
