@@ -11,3 +11,23 @@
 .succes {
     color: green;
 }
+
+main {
+    background: var(--gris);
+    margin: 5em 0 5em 0;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.wrap h1 {
+    color: var(--crème);
+    font-family: 'Kaviron';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 200%;
+    margin: 1em 0 1em 0;
+}
