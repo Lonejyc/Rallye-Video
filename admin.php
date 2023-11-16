@@ -3,18 +3,27 @@ session_start();
 require_once('connexion.php');
 
 if(isset($_POST['action']) && $_POST['action'] === 'add') {
-    $name = $_POST['name'];
-    $poster = $_POST['poster'];
-    $link = $_POST['link'];
-    $team = $_POST['team'];
+    $img_nom = $_FILES['poster']['name'];
+    $tmp_nom = $_FILES['poster']['tmp_name'];
+    $time = time();
+    $new_nom_img = $time.$img_nom;
+    $deplacer_img = move_uploaded_file($tmp_nom,'images/'.$new_nom_img);
 
-    $request = "INSERT INTO rv_depot (Nom_film, rv_team_id, Affiche, Video) VALUES ('$name', '$team', '$poster', '$link')";
-    if(mysqli_query($CONNEXION, $request)) {
-        $succes1 = "Film ajouté avec succès";
+    if($deplacer_img){
+        $name = $_POST['name'];
+        $link = $_POST['link'];
+        $team = $_POST['team'];
+
+        $request = "INSERT INTO rv_depot (Nom_film, rv_team_id, Affiche, Video) VALUES ('$name', '$team', '$new_nom_img', '$link')";
+        if(mysqli_query($CONNEXION, $request)) {
+            $succes1 = "Film ajouté avec succès";
+        } else {
+            echo "Erreur : " . mysqli_error($CONNEXION);
+        }
     } else {
-        echo "Erreur : " . mysqli_error($CONNEXION);
+        echo "Erreur lors du déplacement de l'image";
     }
-}
+} 
 
 if(isset($_POST['action']) && $_POST['action'] === 'remove') {
     $id = $_POST['films'];
@@ -35,7 +44,8 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
     <head>
 
         <link href="css/reset.css" rel="stylesheet">
-        <link href="css/wrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/admin.css" rel="stylesheet">
         <link href="css/header.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
         <!-- Encodage en UTF-8 -->
@@ -46,9 +56,9 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
     </head>
     <!-- Section Body de la page HTML -->
     <body>
-        <div class="wrap">
             <?php include("global/header.php") ?>
-            <main>
+        <main>
+            <div class="wrap">
                 <h1>Gestion des données</h1>
                 <section class="addFilm" aria-label="Ajout de films">
                     <h2>Ajout de films</h2>
@@ -57,7 +67,10 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
                     <?php } ?>
                     <form action="" method="POST">
                         <input type="text" name="name" placeholder="Nom du film" required>
-                        <input type="text" name="poster" placeholder="Affiche" required>
+                        <div class="image">
+                            <span id="import-picture" class="import-picture"><label>Image (en png): </label></span>
+                            <input type="file" name="poster" placeholder="Affiche" required>
+                        </div>                            
                         <input type="url" name="link" placeholder="Lien Youtube" required>
                         <?php
                             $request = "SELECT * FROM rv_team";
@@ -113,9 +126,9 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
                         <?php endforeach; ?>
                     </table>
                 </section>
-            </main>
-            <?php include("global/footer.php") ?>
-        </div>
+            </div>
+        </main>
+        <?php include("global/footer.php") ?>
     </body>
 
 </html>
