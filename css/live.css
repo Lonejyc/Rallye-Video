@@ -1,0 +1,61 @@
+/* Style pour la section principale */
+main {
+    background: var(--gris);
+    padding: 5em 0 5em 0;
+}
+
+.wrap h1 {
+    color: var(--crème);
+    font-family: 'Kaviron';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 200%;
+    padding: 1em 0 1em 0;
+}
+
+/* Style pour la vidéo YouTube */
+main iframe {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 20px;
+}
+
+/* Style pour le conteneur du chat */
+#chat-container {
+    width: 200px;
+    height: 600px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+/* Style pour le formulaire de chat */
+#chat-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#messageInput {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#messageInput:focus {
+    outline: none;
+}
+
+#chat-form button {
+    padding: 8px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+#chat-form button:hover {
+    background-color: #444;
+}

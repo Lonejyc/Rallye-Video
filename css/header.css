@@ -7,60 +7,105 @@ a {
 }
 
 header {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: var(--blanc);
+    width: auto;
+    height: auto;
     background: var(--noir);
+    display: flex;
+    justify-content: center;
     padding-top : 2em;
     padding-bottom : 2em;
 }
 
-header .logo {
-    text-align: center;
-}
-
-header .logo img {
-    width: 50%;
-    height: 50%;
-}
-
 header nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
-}
-
-header nav {
-    display: flex;
 }
 
 header nav ul {
     display: flex;
 }
 
-header nav .mid li a {
+.logo {
+    text-align: center;
+    padding-left: 4em;
+}
+
+.logo img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo p {
+    color: var(--blanc);
+    font-family: 'Kaviron';
+    font-weight: 500;
+    font-style: normal;
+    margin: 5px 0 0;
+    font-size: 18px;
+}
+
+.mid {
+    padding : 0 14em 0 14em;
+}
+
+.mid li a {
     font-family: 'Gotham';
     font-weight: 300;
     font-style: normal;
     color: var(--blanc);
-    padding : 0 2em;
+    padding : 0 2em 0 2em;
 }
 
-header nav .mid li a:hover {
+.mid li a:hover {
     color: var(--crème);
 }
 
-header nav .right li a {
+.right{
+    padding-right: 4em;
+}
+
+.right li a {
     font-family: 'Gotham';
     font-weight: bold;
     font-style: italic;
-    color: var(--blanc);
-    padding : 0 1em;
-    transition: .3s ease-in-out;
+    padding : 0 2em 0 2em;
 }
 
-header nav .right li a:hover {
-    color: var(--crème);
+#live {
+    border-radius: 5px;
+    background-color: red;
+    padding: 3% 0 3% 0;
+}
+
+#live a {
+    color: var(--blanc);
+}
+
+#live:hover {
+    border-radius: 5px;
+    background-color: var(--blanc);
+}
+
+#live:hover a {
+    color: red;
+}
+
+.registration {
+    border-radius: 10px;
+    background-color: var(--bleuGris);
+}
+
+.registration a {
+    color: var(--noir);
+}
+
+.registration:hover {
+    border-radius: 10px;
+    background-color: var(--blanc);
+}
+
+.registration:hover a {
+    color: var(--noir);
 }

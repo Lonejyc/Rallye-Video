@@ -62,6 +62,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Kaviron';
+    src: url('Kaviron.woff2') format('woff2'),
+        url('Kaviron.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
 :root {
     --bleuGris: #7D9EA7;
     --gris: #5E5E70;
