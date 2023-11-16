@@ -12,6 +12,10 @@
     color: green;
 }
 
+html, body {
+    scroll-behavior: smooth;
+}
+
 main {
     background: var(--gris);
     padding: 5em 0 5em 0;

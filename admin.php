@@ -3,8 +3,8 @@ session_start();
 require_once('connexion.php');
 
 if(isset($_POST['action']) && $_POST['action'] === 'add') {
-    $img_nom = $_FILES['poster']['name'];
-    $tmp_nom = $_FILES['poster']['tmp_name'];
+    $img_nom = $_FILES['image']['name'];
+    $tmp_nom = $_FILES['image']['tmp_name'];
     $time = time();
     $new_nom_img = $time.$img_nom;
     $deplacer_img = move_uploaded_file($tmp_nom,'images/'.$new_nom_img);
@@ -23,7 +23,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'add') {
     } else {
         echo "Erreur lors du déplacement de l'image";
     }
-} 
+}    
 
 if(isset($_POST['action']) && $_POST['action'] === 'remove') {
     $id = $_POST['films'];
@@ -67,12 +67,14 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
                     <h2>Ajout de films</h2>
                     <?php if(isset($succes1)) {?>
                         <span class="succes"><?php echo $succes1 ?></span>
+                    <?php } else if(isset($error1)) {?>
+                        <span class="error"><?php echo $error1 ?></span>
                     <?php } ?>
-                    <form action="" method="POST">
+                    <form action="" method="POST" enctype="multipart/form-data">
                         <input type="text" name="name" placeholder="Nom du film" required>
-                        <div class="image">
-                            <span id="import-picture" class="import-picture"><label>Image (en png): </label></span>
-                            <input type="file" name="poster" placeholder="Affiche" required>
+                        <div class="poster">
+                            <label>Image (en png): </label>
+                            <input type="file" name="image" placeholder="Affiche" required>
                         </div>                            
                         <input type="url" name="link" placeholder="Lien Youtube" required>
                         <?php
@@ -124,7 +126,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
                         <?php foreach($films as $film): ?>
                         <tr>
                             <td><?php echo $film['Nom_film']; ?></td>
-                            <td><?php echo $film['Nombre de votes']; ?></td>
+                            <td><?php if($film['Nombre de votes'] == 1) {echo "0";} else {echo $film['Nombre de votes'];} ?></td>
                         </tr>
                         <?php endforeach; ?>
                     </table>

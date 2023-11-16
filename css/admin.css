@@ -1,10 +1,15 @@
-h1, h2 {
-    font-family: 'Kaviron';
-    color: #1a1a1a;
+h2 {
+    font-family: 'Gotham';
+    color: var(--blanc);
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 section {
     margin-bottom: 20px;
+    box-shadow: #1a1a1a 0px 0px 10px;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 form {
@@ -14,10 +19,10 @@ form {
 }
 
 input,
-select,
-button {
-    width: 100%;
+select {
+    width: 400px;
     padding: 12px;
+    margin-top: 12px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -44,6 +49,7 @@ button {
     width: 300px;
     height: 50px;
     margin: 0px auto;
+    padding: 12px;
     display: flex;
     justify-content: center;
     border-radius: 0.9rem;
@@ -74,9 +80,4 @@ th, td {
 th {
     background-color: var(--bleuGris);
     color: #fff;
-}
-
-.succes {
-    color: #4caf50;
-    font-weight: bold;
 }
