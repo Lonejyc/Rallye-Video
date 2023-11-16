@@ -30,17 +30,14 @@
                 <section>
                     <h2 id="sponsor">Partenaire</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et ex congue, rhoncus magna at, faucibus leo. Vivamus nec justo sapien. Sed ac magna eu orci vulputate aliquet non non mauris. Ut pulvinar vehicula pretium. Etiam at quam eget leo imperdiet dictum. Aenean pretium mi lobortis, dictum nunc nec, lacinia eros. Nulla lobortis eget odio a elementum. Curabitur id augue laoreet, vulputate neque a, sollicitudin magna. Ut feugiat urna libero, nec accumsan neque hendrerit ac. In laoreet eu nibh et elementum. Vivamus et vulputate dolor. Fusce sed vehicula sem, ut pretium felis. Phasellus placerat dolor in risus pretium, non placerat nulla malesuada.</p>
-                    <img src="images/logo_montre.svg">
                 </section>
                 <section>
                     <h2 id="legal_information">Mentions Légales</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et ex congue, rhoncus magna at, faucibus leo. Vivamus nec justo sapien. Sed ac magna eu orci vulputate aliquet non non mauris. Ut pulvinar vehicula pretium. Etiam at quam eget leo imperdiet dictum. Aenean pretium mi lobortis, dictum nunc nec, lacinia eros. Nulla lobortis eget odio a elementum. Curabitur id augue laoreet, vulputate neque a, sollicitudin magna. Ut feugiat urna libero, nec accumsan neque hendrerit ac. In laoreet eu nibh et elementum. Vivamus et vulputate dolor. Fusce sed vehicula sem, ut pretium felis. Phasellus placerat dolor in risus pretium, non placerat nulla malesuada.</p>
-                    <img src="images/logo_montre.svg">
                 </section>
                 <section>
                     <h2 id="about">À propos</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et ex congue, rhoncus magna at, faucibus leo. Vivamus nec justo sapien. Sed ac magna eu orci vulputate aliquet non non mauris. Ut pulvinar vehicula pretium. Etiam at quam eget leo imperdiet dictum. Aenean pretium mi lobortis, dictum nunc nec, lacinia eros. Nulla lobortis eget odio a elementum. Curabitur id augue laoreet, vulputate neque a, sollicitudin magna. Ut feugiat urna libero, nec accumsan neque hendrerit ac. In laoreet eu nibh et elementum. Vivamus et vulputate dolor. Fusce sed vehicula sem, ut pretium felis. Phasellus placerat dolor in risus pretium, non placerat nulla malesuada.</p>
-                    <img src="images/logo_montre.svg">
                 </section>
             </div>
         </main>

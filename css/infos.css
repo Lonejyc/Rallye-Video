@@ -3,21 +3,18 @@ section {
 }
 
 h2 {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 300;
     margin-bottom: 10px;
     font-size: 24px;
 }
 
 p {
+    color: var(--blanc);
     margin-bottom: 15px;
     font-size: 16px;
     line-height: 1.5;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-    display: block;
 }
 
 /* Style spécifique pour chaque section */
