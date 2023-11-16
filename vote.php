@@ -54,7 +54,7 @@ if (isset($_POST['vote'])) {
     <body>
         <?php include("global/header.php") ?>
         <main>
-            <div>
+            <div class="wrap">
                 <h1>Vote</h1>
                 <?php if(isset($vote)): ?>
                 <p><?php echo $vote; ?></p>
