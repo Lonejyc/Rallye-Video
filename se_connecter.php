@@ -73,18 +73,28 @@ if(isset($_POST['action'])) {
     }
 }
 ?>
+
 <!DOCTYPE html>
+<!-- Partie HTML de la page -->
 <html>
+    <!-- Section Head de la page HTML -->
     <head>
-        <link href="css/style.css" rel="stylesheet">
+        <?php require_once('connexion.php') ?>
+        <!-- Lien Logo -->
+	    <link rel="icon" type="image/x-icons" href="images/logo_cam.svg">
+        <!-- Lien CSS -->
         <link href="css/reset.css" rel="stylesheet">
         <link href="css/header.css" rel="stylesheet">
         <link href="css/footer.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
         <link href="css/inscription.css" rel="stylesheet">
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>Rallye Video</title>
+        <!-- Encodage en UTF-8 -->
+        <meta charset="UTF-8">
+        <meta name="author" content="Rallye Video">
+        <!-- Titre de la page web -->
+        <title>Rallye Video - Connexion</title>
     </head>
+    <!-- Section Body de la page HTML -->
     <body>
         <?php include("global/header.php") ?>
         <main>

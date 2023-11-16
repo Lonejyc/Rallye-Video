@@ -1,0 +1,113 @@
+/* Réinitialisation des marges et des paddings pour l'ensemble des éléments */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style pour le corps de la page */
+body {
+    font-family: Arial, sans-serif; /* Police par défaut */
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Style pour l'en-tête */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+/* Style pour la section principale */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Style pour la liste des équipes */
+.list {
+    margin-bottom: 20px;
+}
+
+.list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.list th, .list td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.list th {
+    background-color: #f4f4f4;
+}
+
+/* Style pour les formulaires d'inscription dans une équipe */
+.card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card .registration {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.card .registration h2 {
+    margin-bottom: 10px;
+}
+
+.card .registration form {
+    margin-bottom: 20px;
+}
+
+.card .registration select,
+.card .registration input[type='text'],
+.card .registration button {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.card .registration button {
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+.card .registration button:hover {
+    background-color: #444;
+}
+
+.card .registration .infos {
+    text-align: center;
+}
+
+.card .registration .infos button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #333;
+    text-decoration: underline;
+}
+
+.card .registration .infos button:hover {
+    color: #444;
+}
