@@ -27,10 +27,8 @@
         <main>
             <div class="wrap">
                 <h1>Live</h1>
-                <!-- Incluez la bibliothèque jQuery -->
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-                <!-- Incluez la bibliothèque YouTube IFrame Player API -->
                 <script src="https://www.youtube.com/iframe_api"></script>
 
                 <div id="player"></div>

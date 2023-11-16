@@ -27,7 +27,7 @@ header nav ul {
 
 .logo {
     text-align: center;
-    padding-left: 4em;
+    margin-left: 4em;
 }
 
 .logo img {
@@ -47,7 +47,7 @@ header nav ul {
 }
 
 .mid {
-    padding : 0 14em 0 14em;
+    margin : 0 14em 0 14em;
 }
 
 .mid li a {
@@ -55,7 +55,7 @@ header nav ul {
     font-weight: 300;
     font-style: normal;
     color: var(--blanc);
-    padding : 0 2em 0 2em;
+    margin : 0 2em 0 2em;
 }
 
 .mid li a:hover {
@@ -63,28 +63,29 @@ header nav ul {
 }
 
 .right{
-    padding-right: 4em;
+    margin-right: 4em;
 }
 
 .right li a {
     font-family: 'Gotham';
     font-weight: 500;
     font-style: italic;
-    padding : 0 2em 0 2em;
+    margin : 0 2em 0 2em;
 }
 
 #live {
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: red;
-    padding: 3% 0 3% 0;
+    margin: 3% 0 3% 0;
 }
 
 #live a {
     color: var(--blanc);
+    padding: 3% 0 3% 0;
 }
 
 #live:hover {
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: var(--blanc);
 }
 
@@ -93,16 +94,18 @@ header nav ul {
 }
 
 .registration {
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: var(--bleuGris);
+    margin: 3% 0 3% 0;
 }
 
 .registration a {
     color: var(--noir);
+    padding: 3% 0 3% 0;
 }
 
 .registration:hover {
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: var(--blanc);
 }
 
