@@ -77,7 +77,7 @@
                     <?php } ?>
                 </section>
                 <section class="mdp">
-                    <h2>Changer le mot de passe</h2>
+                <h2>Changer le mot de passe</h2>
                     <form action="dashboard.php" method="post">
                         <input type="password" name="password" id="password" placeholder="Mot de passe actuel" required>
                         <input type="password" name="new_password" id="new_password" placeholder="Nouveau mot de passe" required>
