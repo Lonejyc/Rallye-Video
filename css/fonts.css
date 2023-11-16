@@ -1,55 +1,55 @@
 @font-face {
     font-family: 'Gotham';
-    src: url('Gotham-Light.woff2') format('woff2'),
-        url('Gotham-Light.woff') format('woff');
+    src: url('../fonts/Gotham-Light.woff2') format('woff2'),
+        url('../fonts/Gotham-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('Gotham-LightItalic.woff2') format('woff2'),
-        url('Gotham-LightItalic.woff') format('woff');
+    src: url('../fonts/Gotham-LightItalic.woff2') format('woff2'),
+        url('../fonts/Gotham-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('Gotham-Medium.woff2') format('woff2'),
-        url('Gotham-Medium.woff') format('woff');
+    src: url('../fonts/Gotham-Medium.woff2') format('woff2'),
+        url('../fonts/Gotham-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('Gotham-MediumItalic.woff2') format('woff2'),
-        url('Gotham-MediumItalic.woff') format('woff');
+    src: url('../fonts/Gotham-MediumItalic.woff2') format('woff2'),
+        url('../fonts/Gotham-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('Gotham-Bold.woff2') format('woff2'),
-        url('Gotham-Bold.woff') format('woff');
+    src: url('../fonts/Gotham-Bold.woff2') format('woff2'),
+        url('../fonts/Gotham-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('Gotham-Black.woff2') format('woff2'),
-        url('Gotham-Black.woff') format('woff');
+    src: url('../fonts/Gotham-Black.woff2') format('woff2'),
+        url('../fonts/Gotham-Black.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Kaviron';
-    src: url('Kaviron.woff2') format('woff2'),
-        url('Kaviron.woff') format('woff');
+    src: url('../fonts/Kaviron.woff2') format('woff2'),
+        url('../fonts/Kaviron.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }

@@ -35,28 +35,66 @@
                     <p class="title">Le Rallye Vidéo commence dans</p>
                     <div class="countdown">
                         <div class="box">
-                            <span class="days"></span>
+                            <div class="time">
+                                <span class="days1"></span>
+                                <span class="days2"></span>
+                            </div>
                             <div class="unite">Jours</div>
                         </div>
-                        <div class="box">
-                            <span class="hours"></span>
-                            <div class="unite">Heures</div>
+                        <div class="dots">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
                         </div>
                         <div class="box">
-                            <span class="minutes"></span>
+                            <div class="time">
+                                <span class="hours1"></span>
+                                <span class="hours2"></span>
+                            </div>
+                            <div class="unite">Heures</div>
+                        </div>
+                        <div class="dots">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="box">
+                            <div class="time">
+                                <span class="minutes1"></span>
+                                <span class="minutes2"></span>
+                            </div>
                             <div class="unite">Minutes</div>
                         </div>
                     </div>
                     <script src="js/countdown.min.js"></script>
                 </section>
-                <section class="bannière">
-                    <div class="bannièreText">
-                        <p>Rallye Vidéo</p>
-                        <img src="" alt="">
-                    </div>
-                    <img src="images/bannière.svg">
-                </section>
             </div>
+            <section class="bannière">
+                <div class="bannièreText">
+                    <p>Rallye</p>
+                    <p>Vidéo</p>
+                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <p>Rallye</p>
+                    <p>Vidéo</p>
+                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <p>Rallye</p>
+                    <p>Vidéo</p>
+                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <p>Rallye</p>
+                    <p>Vidéo</p>
+                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <p>Rallye</p>
+                    <p>Vidéo</p>
+                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <p>Rallye</p>
+                    <p>Vidéo</p>
+                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <p>Rallye</p>
+                    <p>Vidéo</p>
+                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <p>Rallye</p>
+                    <p>Vidéo</p>
+                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                </div>
+            </section>
         </main>
         <?php include("global/footer.php") ?>
     </body>

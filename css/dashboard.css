@@ -1,3 +1,7 @@
+/* Ajout des polices */
+@import url(fonts.css);
+
+/* Ajout des styles */
 section {
     background: #FBE7C2;
     padding: 20px;
