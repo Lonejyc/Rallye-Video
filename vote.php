@@ -29,21 +29,28 @@ if (isset($_POST['vote'])) {
     }
 }
 ?>
+
 <!DOCTYPE html>
+<!-- Partie HTML de la page -->
 <html>
+    <!-- Section Head de la page HTML -->
     <head>
-
-        <link href='css/reset.css' rel='stylesheet'>
-        <link href='css/style.css' rel='stylesheet'>
-        <link href='css/vote.css' rel='stylesheet'>
-        <link href='css/header.css' rel='stylesheet'>
-        <link href='css/footer.css' rel='stylesheet'>
-
+        <?php require_once('connexion.php') ?>
+        <!-- Lien Logo -->
+	    <link rel="icon" type="image/x-icons" href="images/logo_cam.svg">
+        <!-- Lien CSS -->
+        <link href="css/reset.css" rel="stylesheet">
+        <link href="css/header.css" rel="stylesheet">
+        <link href="css/footer.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/vote.css" rel="stylesheet">
+        <!-- Encodage en UTF-8 -->
         <meta charset="UTF-8">
         <meta name="author" content="Rallye Video">
-  
-        <title>Rallye Video</title>
+        <!-- Titre de la page web -->
+        <title>Rallye Video - Vote</title>
     </head>
+    <!-- Section Body de la page HTML -->
     <body>
         <?php include("global/header.php") ?>
         <main>
