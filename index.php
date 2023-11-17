@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <!-- Partie HTML de la page -->
-<html>
+<html lang="fr">
     <!-- Section Head de la page HTML -->
     <head>
         <?php require_once('connexion.php') ?>
@@ -28,7 +28,7 @@
         <?php include("global/header.php") ?>
         <main>
             <div class="wrap">
-                <section class="tempsRestant">
+                <section class="tempsRestant" aria-label="Compte à rebours du début du Rallye Vidéo">
                     <div class="lottie">
                         <dotlottie-player src="anim/WaitingAnimation.lottie" background="transparent" speed="1" loop autoplay></dotlottie-player>
                     </div>
@@ -67,32 +67,32 @@
                     <script src="js/countdown.min.js"></script>
                 </section>
             </div>
-            <section class="bannière">
+            <section class="bannière" aria-label="Bannière du Rallye Vidéo avec logo et texte">
                 <div class="bannièreText">
                     <p>Rallye</p>
                     <p>Vidéo</p>
-                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <img alt="Logo Caméra du Rallye Vidéo" src="images/logo_cam.svg" loading="lazy">
                     <p>Rallye</p>
                     <p>Vidéo</p>
-                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <img alt="Logo Caméra du Rallye Vidéo" src="images/logo_cam.svg" loading="lazy">
                     <p>Rallye</p>
                     <p>Vidéo</p>
-                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <img alt="Logo Caméra du Rallye Vidéo" src="images/logo_cam.svg" loading="lazy">
                     <p>Rallye</p>
                     <p>Vidéo</p>
-                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <img alt="Logo Caméra du Rallye Vidéo" src="images/logo_cam.svg" loading="lazy">
                     <p>Rallye</p>
                     <p>Vidéo</p>
-                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <img alt="Logo Caméra du Rallye Vidéo" src="images/logo_cam.svg" loading="lazy">
                     <p>Rallye</p>
                     <p>Vidéo</p>
-                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <img alt="Logo Caméra du Rallye Vidéo" src="images/logo_cam.svg" loading="lazy">
                     <p>Rallye</p>
                     <p>Vidéo</p>
-                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <img alt="Logo Caméra du Rallye Vidéo" src="images/logo_cam.svg" loading="lazy">
                     <p>Rallye</p>
                     <p>Vidéo</p>
-                    <img src="images/logo_cam.svg" alt="Logo Caméra du Rallye Vidéo">
+                    <img alt="Logo Caméra du Rallye Vidéo" src="images/logo_cam.svg" loading="lazy">
                 </div>
             </section>
         </main>
