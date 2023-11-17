@@ -83,7 +83,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
         <link href="css/equipe.css" rel="stylesheet">
         <!-- Encodage en UTF-8 -->
         <meta charset="UTF-8">
-        <meta name="author" content="Rallye Video">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <!-- Titre de la page web -->
         <title>Rallye Video - Equipes</title>
     </head>
