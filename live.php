@@ -30,7 +30,6 @@
             <div class="wrap" role="main" aria-label="Contenu principal">
                 <h1 role="heading" aria-level="1">Live</h1>
                 <section role="region" aria-labelledby="player-title">
-                    <h2 id="player-title">Rallye vidéo</h2>
                     <div id="player" role="region" aria-label="Lecteur vidéo"></div>
                     <div id="live-chat" role="region" aria-labelledby="live-chat-title"></div>
                 </section>
