@@ -55,18 +55,19 @@ section h2 {
     display: inline-block;
     margin-top: 20px;
     font-size: 16px;
-    color: var(--noir);
+    color: var(--crème);
     text-decoration: none;
-    border: 1px solid var(--noir);
+    font-family: 'Gotham';
+    border: 1px solid var(--crème);
     padding: 8px 16px;
     border-radius: 5px;
     transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .decon:hover {
-    color: var(--blanc);
-    background-color: var(--noir);
-    border-color: var(--noir);
+    color: var(--noir);
+    background-color: var(--crème);
+    border-color: var(--crème);
 }
 
 .profil,

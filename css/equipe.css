@@ -1,7 +1,10 @@
+@import url(fonts.css);
+
 /* Style pour la liste des équipes */
 h2 {
     font-family: 'Gotham';
     font-style: normal;
+    color: var(--crème);
     font-weight: 300;
     margin-bottom: 20px;
     font-size: 24px;
@@ -20,6 +23,10 @@ h2 {
     padding: 8px;
     border: 1px solid #ccc;
     text-align: left;
+}
+
+.list td {
+    color: var(--blanc);
 }
 
 .list th {
@@ -48,6 +55,7 @@ h2 {
 
 .card .registration h2 {
     margin-bottom: 10px;
+    color: var(--noir);
 }
 
 .card .registration form {

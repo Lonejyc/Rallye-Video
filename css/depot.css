@@ -8,6 +8,7 @@ span {
 h2 {
     font-family: 'Gotham';
     font-style: normal;
+    color: var(--crème);
     font-weight: 300;
     margin-bottom: 10px;
     font-size: 24px;
