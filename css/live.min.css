@@ -1,0 +1,1 @@
+section {display: flex;justify-content: space-around;align-items: flex-start;flex-wrap: wrap;}#player, #live-chat {width: 45%;min-height: 300px;margin-bottom: 20px;padding: 10px;border: 1px solid #ccc;border-radius: 5px;box-sizing: border-box;}#live-chat {overflow-y: auto;background-color: #f9f9f9;font-size: 14px;}#live-chat p {margin: 5px 0;}
