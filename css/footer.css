@@ -79,3 +79,18 @@ footer p {
     justify-content: center;
     margin-bottom: 18px;
 }
+
+@media screen and (max-width: 768px) {
+    footer nav ul {
+        gap: 20px;
+    }
+
+    footer nav ul li a {
+        font-size: 1em;
+        font-weight: 500;
+    }
+
+    footer .arrow {
+        top: -50%;
+    }
+}
