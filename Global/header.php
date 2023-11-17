@@ -20,6 +20,6 @@
         <div class="burger">
             <span class="line"></span>
         </div>
-        <script src="js/burger.js"></script>
+        <script src="js/burger.min.js"></script>
     </nav>
 </header>
