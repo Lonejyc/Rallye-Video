@@ -76,7 +76,7 @@ if(isset($_POST['action'])) {
 
 <!DOCTYPE html>
 <!-- Partie HTML de la page -->
-<html>
+<html lang="fr">
     <!-- Section Head de la page HTML -->
     <head>
         <?php require_once('connexion.php') ?>
@@ -102,38 +102,38 @@ if(isset($_POST['action'])) {
                 <h1>Connexion</h1>
                 <section class="container">
                     <div class="card">
-                        <div class="conne">
+                        <div class="conne" role="region" aria-labelledby="connexion-title">
                             <?php if(isset($erreur1)) {?>
                                 <span class="error" ><?php echo $erreur1 ?></span>
                             <?php } ?>
                             <form method="POST" action="#">
-                                <h2>Connexion</h2>
-                                <input type="text" name="mail" placeholder="Mail" autocomplete="off" required>
-                                <input type="password" name="password" placeholder="Mot de passe" autocomplete="off" required>
-                                <button type="submit" name="action" value="connexion" class="submit">Connexion</button>
+                                <h2 id="connexion-title">Connexion</h2>
+                                <input type="text" name="mail" placeholder="Mail" autocomplete="off" required aria-label="Adresse e-mail">
+                                <input type="password" name="password" placeholder="Mot de passe" autocomplete="off" required aria-label="Mot de passe">
+                                <button type="submit" name="action" value="connexion" class="submit" aria-label="Se connecter">Connexion</button>
                             </form>
                             <section class="infos" aria-label="Informations">
                                 <p>Nouveau ici ?</p>
-                                <button class="change normal">S'inscrire</button>
+                                <button class="change normal" aria-label="S'inscrire">S'inscrire</button>
                             </section>
                         </div>
-                        <div class="inscr">
-                        <?php if(isset($succes2)) {?>
-                            <span class="succes"><?php echo $succes2 ?></span>
-                        <?php } if(isset($erreur2)) {?>
-                            <span class="error" ><?php echo $erreur2 ?></span>
-                        <?php } ?>
+                        <div class="inscr" role="region" aria-labelledby="inscription-title">
+                            <?php if(isset($succes2)) {?>
+                                <span class="succes"><?php echo $succes2 ?></span>
+                            <?php } if(isset($erreur2)) {?>
+                                <span class="error" ><?php echo $erreur2 ?></span>
+                            <?php } ?>
                             <form method="POST" action="#">
-                                <h2>Inscription</h2>
-                                <input type="text" name="name" placeholder="Nom" required>
-                                <input type="text" name="firstName" placeholder="Prénom" required>
-                                <input type="text" name="mail" placeholder="Mail universitaire" required>
-                                <input type="password" name="password" placeholder="Mot de Passe" minlength="8" required>
-                                <button type="submit" name="action" value="inscription" class="submit">S'inscrire</button>
+                                <h2 id="inscription-title">Inscription</h2>
+                                <input type="text" name="name" placeholder="Nom" required aria-label="Nom">
+                                <input type="text" name="firstName" placeholder="Prénom" required aria-label="Prénom">
+                                <input type="text" name="mail" placeholder="Mail universitaire" required aria-label="Mail universitaire">
+                                <input type="password" name="password" placeholder="Mot de Passe" minlength="8" required aria-label="Mot de Passe">
+                                <button type="submit" name="action" value="inscription" class="submit" aria-label="S'inscrire">S'inscrire</button>
                             </form>
                             <section class="infos" aria-label="Informations">
                                 <p>Déjà inscrit ?</p>
-                                <button class="change reverse">Se connecter</button>
+                                <button class="change reverse" aria-label="Se connecter">Se connecter</button>
                             </section>
                         </div>
                     </div>

@@ -30,7 +30,7 @@ if (isset($_POST['vote'])) {
 
 <!DOCTYPE html>
 <!-- Partie HTML de la page -->
-<html>
+<html lang="fr">
     <!-- Section Head de la page HTML -->
     <head>
         <?php require_once('connexion.php') ?>
@@ -55,20 +55,20 @@ if (isset($_POST['vote'])) {
             <div class="wrap">
                 <h1>Vote</h1>
                 <?php if(isset($error)) {?>
-                <p class="erreur"><?php echo $error; ?></p>
+                <p class="erreur" role="alert"><?php echo $error; ?></p>
                 <?php } else if(isset($succes)) {?>
                     <p class="succes"><?php echo $succes; ?></p>
                 <?php } ?>
                 <?php $request = "SELECT * FROM rv_depot"; ?>
-                <div class="films">
+                <div class="films" role="list">
                     <?php if($rv_depot = mysqli_query($CONNEXION, $request)): ?>
                     <?php foreach($rv_depot as $rv_depot): ?>
-                    <div class="film">
+                    <div class="film" role="listitem">
                         <div class="affiche">
                             <img src="images/<?php echo $rv_depot['Affiche']; ?>" alt="<?php echo $rv_depot['Affiche']; ?>" loading="lazy"/>
                             <form action="#" method="POST">
                                 <input type="hidden" name="id_film" value="<?php echo $rv_depot['id']; ?>">
-                                <input type="submit" name="vote" value="VOTER">
+                                <button type="submit" name="vote" value="VOTER" aria-label="Voter pour <?php echo $rv_depot['Nom_film']; ?>">VOTER</button>
                             </form>
                         </div>
                         <p class="nom"><?php echo $rv_depot['Nom_film']; ?></p>
