@@ -10,91 +10,109 @@ h2 {
     font-size: 24px;
 }
 
-.list {
-    margin-bottom: 20px;
-}
-
 .list table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 30px;
 }
 
 .list th, .list td {
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
 }
 
-.list td {
-    color: var(--blanc);
-}
-
-.list th {
-    background-color: #f4f4f4;
-}
-
-/* Style pour les formulaires d'inscription dans une équipe */
 .card {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
 }
 
-.card .registration {
-    width: 45%;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-}
-
-.in_team {
-    border-bottom: 1px solid var(--noir);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.card .registration h2 {
-    margin-bottom: 10px;
-    color: var(--noir);
-}
-
-.card .registration form {
-    margin-bottom: 20px;
-}
-
-.card .registration select,
-.card .registration input[type='text'],
-.card .registration button {
-    margin-bottom: 10px;
+.registration {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    max-width: 400px;
 }
 
-.card .registration button {
-    cursor: pointer;
-    background-color: #333;
+.in_team, .a_team {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
     color: #fff;
     border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
-.card .registration button:hover {
-    background-color: #444;
+button:hover {
+    background-color: #0056b3;
 }
 
-.card .registration .infos {
+.erreur, .succes {
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.erreur {
+    background-color: #ffdddd;
+    border: 1px solid #f44336;
+    color: #f44336;
+}
+
+.succes {
+    background-color: #d4edda;
+    border: 1px solid #28a745;
+    color: #28a745;
+}
+
+.infos {
+    margin-top: 15px;
     text-align: center;
 }
 
-.card .registration .infos button {
+.change {
+    padding: 5px 15px;
+    background-color: #17a2b8;
+    color: #fff;
     border: none;
-    background-color: transparent;
+    border-radius: 3px;
     cursor: pointer;
-    color: #333;
-    text-decoration: underline;
+    margin-top: 10px;
 }
 
-.card .registration .infos button:hover {
-    color: #444;
+.change:hover {
+    background-color: #117a8b;
+}
+
+/* Media Query for Responsiveness */
+@media screen and (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+    .registration {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
 }
