@@ -69,7 +69,7 @@ main .wrap .tempsRestant {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--orange);
+    background: var(--crème);
 }
 
 .wrap .tempsRestant .countdown .box .time {
@@ -87,7 +87,7 @@ main .wrap .tempsRestant {
     height: 110px;
     border-radius: 20px;
     background: var(--crème);
-    color: var(--orange);
+    color: var(--gris);
     text-align: center;
     font-family: 'Kaviron';
     font-size: 5rem;
@@ -123,7 +123,7 @@ main .wrap .tempsRestant {
 }
 
 .bannière .bannièreText > p {
-    color: var(--orange);
+    color: var(--crème);
     font-family: 'Kaviron';
     text-align: center;
     font-size: 4.65rem;
