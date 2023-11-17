@@ -33,7 +33,7 @@
     transition: .3s ease-in-out;
 }
 
-.films .film .affiche form input[type="submit"] {
+.films .film .affiche form button[type="submit"] {
     background: var(--orange);
     color: var(--blanc);
     font-size: 1.5rem;
