@@ -29,8 +29,10 @@
         <main>
             <div class="wrap">
                 <h1>Live</h1>
-                <div id="player"></div>
-                <div id="live-chat"></div>
+                <section>
+                    <div id="player"></div>
+                    <div id="live-chat"></div>
+                </section>
             </div>
         </main>
         <?php include("global/footer.php") ?>

@@ -1,7 +1,5 @@
-/* CSS pour le conteneur principal */
-.wrap {
+.section {
     display: flex;
-    justify-content: space-between;
 }
 
 /* CSS pour le lecteur vidéo */

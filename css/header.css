@@ -66,49 +66,35 @@ header nav ul {
     margin-right: 4em;
 }
 
-.right li a {
+.right a {
     font-family: 'Gotham';
     font-weight: 500;
-    font-style: italic;
-    margin : 0 2em 0 2em;
+    font-style: normal;
+    margin: 0 2em 0 2em;
 }
 
 #live {
-    border-radius: 20px;
-    background-color: red;
-    margin: 3% 0 3% 0;
-}
-
-#live a {
     color: var(--blanc);
-    padding: 3% 0 3% 0;
+    background-color: red;
+    padding: 0.5em 2em 0.5em 2em;
+    border-radius: 10px;
 }
 
 #live:hover {
-    border-radius: 20px;
-    background-color: var(--blanc);
-}
-
-#live:hover a {
     color: red;
+    background-color: var(--blanc);
+    transition: background-color 0.3s ease;
 }
 
 .registration {
-    border-radius: 20px;
-    background-color: var(--bleuGris);
-    margin: 3% 0 3% 0;
-}
-
-.registration a {
     color: var(--noir);
-    padding: 3% 0 3% 0;
+    background-color: var(--bleuGris);
+    padding: 0.5em 2em 0.5em 2em;
+    border-radius: 10px;
 }
 
 .registration:hover {
-    border-radius: 20px;
+    color: var(--bleuGris);
     background-color: var(--blanc);
-}
-
-.registration:hover a {
-    color: var(--noir);
+    transition: background-color 0.3s ease;
 }
