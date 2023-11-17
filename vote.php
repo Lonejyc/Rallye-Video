@@ -65,7 +65,7 @@ if (isset($_POST['vote'])) {
                     <?php foreach($rv_depot as $rv_depot): ?>
                     <div class="film">
                         <div class="affiche">
-                            <img src="images/<?php echo $rv_depot['Affiche']; ?>" alt="<?php echo $rv_depot['Affiche']; ?>"/>
+                            <img src="images/<?php echo $rv_depot['Affiche']; ?>" alt="<?php echo $rv_depot['Affiche']; ?>" loading="lazy"/>
                             <form action="#" method="POST">
                                 <input type="hidden" name="id_film" value="<?php echo $rv_depot['id']; ?>">
                                 <input type="submit" name="vote" value="VOTER">
