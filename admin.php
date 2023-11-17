@@ -39,7 +39,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
 
 <!DOCTYPE html>
 <!-- Partie HTML de la page -->
-<html>
+<html lang="fr">
     <!-- Section Head de la page HTML -->
     <head>
         <?php require_once('connexion.php') ?>
@@ -63,7 +63,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
         <main>
             <div class="wrap">
                 <h1 class="gest">Gestion des données</h1>
-                <section class="addFilm" aria-label="Ajout de films">
+                <section class="addFilm" aria-label="Formulaire d'ajout de films">
                     <h2>Ajout de films</h2>
                     <?php if(isset($succes1)) {?>
                         <span class="succes"><?php echo $succes1 ?></span>
@@ -90,7 +90,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
                         <button type="submit" name="action" value="add">Ajouter</button>
                     </form>
                 </section>
-                <section class="remFilm" aria-label="Suppression de films">
+                <section class="remFilm" aria-label="Formulaire de suppression de films">
                     <h2>Suppression de films</h2>
                     <?php if(isset($succes2)) {?>
                         <span class="succes"><?php echo $succes2 ?></span>

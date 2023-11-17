@@ -19,7 +19,7 @@ html, body {
 }
 
 main {
-    background: var(--gris);
+    background: var(--bleuGris);
     padding: 5em 0 5em 0;
 }
 

@@ -41,7 +41,7 @@
 
 <!DOCTYPE html>
 <!-- Partie HTML de la page -->
-<html>
+<html lang="fr">
     <!-- Section Head de la page HTML -->
     <head>
     <?php require_once('connexion.php') ?>
@@ -65,7 +65,7 @@
         <main>
             <div class="wrap">
                 <h1>Dashboard</h1>
-                <section class="profil">
+                <section class="profil" aria-label="Informations du profil">
                     <h2>Information du profil</h2>
                     <p><span class="bold">Nom:</span> <?php echo $nom; ?></p>
                     <p><span class="bold">Prénom:</span> <?php echo $prenom; ?></p>
@@ -76,7 +76,7 @@
                     <p><span class="bold">Team:</span> Aucune team</p>
                     <?php } ?>
                 </section>
-                <section class="mdp">
+                <section class="mdp" aria-label="Changer le mot de passe">
                 <h2>Changer le mot de passe</h2>
                     <form action="dashboard.php" method="post">
                         <input type="password" name="password" id="password" placeholder="Mot de passe actuel" required>
@@ -139,7 +139,7 @@
                         }
                     ?>
                 </section>
-                <a href='se_deconnecter.php'><span class="decon">Déconnexion</span></a>
+                <a href='se_deconnecter.php' aria-label="Déconnexion"><span class="decon">Déconnexion</span></a>
             </div>
         </main>
         <?php include("global/footer.php") ?>

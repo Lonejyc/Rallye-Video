@@ -69,7 +69,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
 
 <!DOCTYPE html>
 <!-- Partie HTML de la page -->
-<html>
+<html lang="fr">
     <!-- Section Head de la page HTML -->
     <head>
         <?php require_once('connexion.php') ?>
@@ -126,9 +126,9 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
                 </div>
                 <div class="container">
                     <div class="card">
-                        <div class="registration">
-                            <div class="in_team">
-                                <h2>Inscription dans une équipe</h2>
+                        <section class="registration" aria-labelledby="section inscription">
+                            <section class="in_team" aria-labelledby="inscription">
+                                <h2 id="inscription-team">Inscription dans une équipe</h2>
                                 <form method="POST">
                                     <?php
                                     // Vérifier si l'utilisateur est connecté (assumons que vous avez une session utilisateur)
@@ -166,9 +166,9 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
                                         echo "Connectez-vous pour vous inscrire dans une équipe.";
                                     }
                                     ?>
-                                    <div id="team-select">
-                                        <select name="equipe" id="equipe" required>
-                                            <option value="" disabled selected>Sélectionnez une équipe</option>
+                                    <section id="team-select">
+                                        <select name="equipe" id="equipe" required aria-describedby="equipe-desc">
+                                            <p id="equipe-desc">Sélectionnez une équipe</p>
                                             <?php
                                             $request = "SELECT id, Nom_equipe FROM rv_team";
                                             $equipes = mysqli_query($CONNEXION, $request);
@@ -180,7 +180,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
                                         </select>
                                     </div>
                                     <br>
-                                    <button type="submit" name="action" value="confirm1">OK</button>
+                                    <button type="submit" name="action" value="confirm1" aria-label="Confirmer l'inscription">OK</button>
                                     <div class="infos">
                                         <p>L'équipe n'existe pas encore ? </p>
                                         <button class="change normal">Inscrivez-la maintenant !</button>

@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <!-- Partie HTML de la page -->
-<html>
+<html lang="fr">
     <!-- Section Head de la page HTML -->
     <head>
     <?php require_once('connexion.php') ?>
@@ -29,7 +29,7 @@
                 <h1>Déposer un film</h1>
                 <span>Pour déposer un film, vous devez déposer un dossier contenant votre film, une affiche et une miniature (dossier ≈ 300Mo).</span>
                 <h2>Convention de nommage :</h2>
-                <ul>
+                <ul aria-label="Detail de la convention de nommage">
                     <li>Film.mp4 (Vidéo+générique / .mp4 / H.264 / 1920x1080 / Débit 150000 kbit/s)</li>
                     <li>Film_Affiche.png (format A4)</li>
                     <li>Film_minia.png (format 1920x1080)</li>
@@ -39,7 +39,9 @@
                     title="Inline Frame Example"
                     width="500"
                     height="500"
-                    src="https://iutc-cloud.univ-smb.fr/s/z3FPBnSMLRCTCbk">
+                    src="https://iutc-cloud.univ-smb.fr/s/z3FPBnSMLRCTCbk"
+                    aria-label="Vidéo du dépôt du film"
+                >
                 </iframe>
             </div>
         </main>
