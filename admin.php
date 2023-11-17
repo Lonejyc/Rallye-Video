@@ -110,7 +110,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
                     </form>
                 </section>
                 <section class="result" aria-label="Résultat des votes">
-                    <h2>résultat des votes</h2>
+                    <h2>Résultat des votes</h2>
                     <?php
                         $request = "SELECT d.Nom_film, COUNT(d.Nom_film) AS 'Nombre de votes' 
                         FROM rv_depot d
