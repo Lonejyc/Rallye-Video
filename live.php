@@ -38,33 +38,15 @@
         <?php include("global/footer.php") ?>
         <script src="https://www.youtube.com/iframe_api"></script>
         <script>
-        var videoId = 'mPhl23eo69g';
-        var apiKey = 'AIzaSyD03L3Cvbq--FipuDu-u5uLvgbPRcwFDBk';
-
-        // Fonction pour charger les commentaires
-        function loadComments() {
-            $.get(
-                'https://www.googleapis.com/youtube/v3/commentThreads', {
-                    part: 'snippet',
-                    videoId: videoId,
-                    key: apiKey,
-                    maxResults: 15,
-                },
-                function(data) {
-                    var commentSection = $('#live-chat');
-                    commentSection.empty(); // Efface les commentaires existants
-
-                    data.items.forEach(function(comment) {
-                        var commentText = comment.snippet.topLevelComment.snippet.textDisplay;
-                        commentSection.append('<p>' + commentText + '</p>');
-                    });
-                }
-            );
-        }
+        // Variables pour stocker l'ID de la vidéo YouTube et la clé API
+        const videoId = 'jfKfPfyJRdk';
+        const apiKey = 'AIzaSyBmI6Wf--_cdvzQnD2NX4XtODw44xuJZgM';
 
         // Fonction d'initialisation du lecteur vidéo
         function onYouTubeIframeAPIReady() {
             new YT.Player('player', {
+                height: '360',
+                width: '640',
                 videoId: videoId,
                 events: {
                     'onReady': onPlayerReady,
@@ -77,8 +59,72 @@
             event.target.playVideo();
             // Chargez les commentaires lorsque le lecteur est prêt
             loadComments();
-            // Actualisez les commentaires toutes les 1 seconde (ajustable selon vos besoins)
+            // Actualisez les commentaires toutes les 1 secondes (ajustable selon vos besoins)
             setInterval(loadComments, 1000);
+        }
+
+        // Fonction pour charger les commentaires
+        function loadComments() {
+            // Utilisez l'API YouTube Data v3 pour récupérer les commentaires
+            $.get(
+                'https://www.googleapis.com/youtube/v3/commentThreads',
+                {
+                    part: 'snippet',
+                    videoId: videoId,
+                    key: apiKey,
+                    maxResults: 10,
+                },
+                function(data) {
+                    displayComments(data.items);
+                }
+            );
+        }
+
+        // Fonction pour afficher les commentaires
+        function displayComments(comments) {
+            var commentSection = $('#live-chat');
+            commentSection.empty(); // Efface les commentaires existants
+
+            comments.forEach(function(comment) {
+                var commentText = comment.snippet.topLevelComment.snippet.textDisplay;
+                commentSection.append('<p>' + commentText + '</p>');
+            });
+
+            // Ajoutez un formulaire pour ajouter des commentaires (si nécessaire)
+            commentSection.append('<form id="comment-form"><textarea id="new-comment"></textarea><br/><button type="button" onclick="postComment()">Ajouter un commentaire</button></form>');
+        }
+
+        // Fonction pour poster un commentaire
+        function postComment() {
+            var newComment = $('#new-comment').val();
+            
+            // Préparez les données pour l'envoi du commentaire
+            var commentData = {
+                snippet: {
+                    videoId: videoId,
+                    topLevelComment: {
+                        snippet: {
+                            textOriginal: newComment
+                        }
+                    }
+                }
+            };
+            
+            // Envoie du commentaire à l'API YouTube
+            $.ajax({
+                type: 'POST',
+                url: 'https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&key=' + apiKey,
+                contentType: 'application/json',
+                data: JSON.stringify(commentData),
+                success: function(response) {
+                    console.log('Commentaire posté avec succès :', response);
+                    // Vous pouvez ajouter des actions supplémentaires après avoir posté le commentaire
+                },
+                error: function(error) {
+                    console.error('Erreur lors de la publication du commentaire :', error);
+                    // Gérez les erreurs ici
+                }
+            });
         }
     </script>
     </body>

@@ -1,17 +1,28 @@
-.section {
+section {
     display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
-/* CSS pour le lecteur vidéo */
-#player {
-    width: 70%;
-}
-
-/* CSS pour la section des commentaires */
+#player,
 #live-chat {
-    width: 25%;
-    border: 1px solid #ccc;
+    width: 45%;
+    min-height: 300px;
+    margin-bottom: 20px;
     padding: 10px;
-    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style spécifique pour les commentaires */
+#live-chat {
     overflow-y: auto;
+    background-color: #f9f9f9;
+    font-size: 14px;
+}
+
+#live-chat p {
+    margin: 5px 0;
 }
