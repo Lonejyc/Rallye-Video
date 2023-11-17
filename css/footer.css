@@ -28,7 +28,7 @@ footer nav ul li a {
     font-style: normal;
     font-weight: 300;
     font-size: 1.2em;
-    color: var(--blanc);
+    color: var(--noir);
     text-decoration: none;
     transition: .3s ease-in-out;
 }
@@ -41,7 +41,7 @@ footer .arrow {
     width: 40px;
     height: 40px;
     display: flex;
-    background: var(--blanc);
+    background: var(--noir);
     border-radius: 50%;
     align-items: center;
     justify-content: center;
@@ -51,12 +51,18 @@ footer .arrow {
     transition: .3s ease-in-out;
 }
 
+.arrow img {
+    filter: invert(1);
+}
+
+
 footer .arrow img {
     transition: .3s ease-in-out;
+    color: var(--blanc);
 }
 
 footer .arrow:hover {
-    background: var(--crème);
+    background: var(--gris);
 }
 
 footer .arrow:hover img{
@@ -64,7 +70,7 @@ footer .arrow:hover img{
 }
 
 footer p {
-    color: var(--blanc);
+    color: var(--noir);
     font-size: .8em;
     font-family: 'Gotham';
     font-weight: 300;
