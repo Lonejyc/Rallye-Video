@@ -10,7 +10,7 @@ if(isset($_POST['action'])) {
             $mail = $_POST['mail'];
             // Vérifie si l'adresse e-mail se termine par les domaines souhaités
             $domain = substr(strrchr($mail, "@"), 1); // Récupère le domaine de l'adresse e-mail
-            if ($domain != "etu.univ-smb.fr" && $domain != "etu.univ-savoie.fr") {
+            if ($domain != "etu.univ-smb.fr" && $domain != "etu.univ-savoie.fr" && $domain != "univ-savoie.fr" && $domain != "univ-smb.fr") {
                 $erreur2 = "L'adresse e-mail doit se terminer par etu.univ-smb.fr ou etu.univ-savoie.fr";
             }
             $mdp = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encrypt the password

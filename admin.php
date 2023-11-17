@@ -74,6 +74,7 @@ if(isset($_POST['action']) && $_POST['action'] === 'remove') {
                         <input type="text" name="name" placeholder="Nom du film" required>
                         <div class="poster">
                             <label>Image (en png): </label>
+                            <input type="hidden" value="10000000" name="MAX_FILE_SIZE">
                             <input type="file" name="image" placeholder="Affiche" required>
                         </div>                            
                         <input type="url" name="link" placeholder="Lien Youtube" required>
