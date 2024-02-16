@@ -125,100 +125,98 @@ if (isset($_POST['action']) && $_POST['action'] === 'confirmation') {
                     ?>
                 </div>
                 <div class="container">
-                    <div class="card">
-                        <section class="registration" aria-labelledby="section inscription">
-                            <section class="in_team" aria-labelledby="inscription">
-                                <h2 id="inscription-team">Inscription dans une équipe</h2>
-                                <form method="POST">
-                                    <?php
-                                    // Vérifier si l'utilisateur est connecté (assumons que vous avez une session utilisateur)
-                                    if (isset($_SESSION['user_id'])) {
-                                        $user_id = $_SESSION['user_id'];
+                    <section class="inscription" aria-labelledby="section inscription">
+                        <section class="in_team" aria-labelledby="inscription">
+                            <h2>Inscription dans une équipe</h2>
+                            <form method="POST">
+                                <?php
+                                // Vérifier si l'utilisateur est connecté (assumons que vous avez une session utilisateur)
+                                if (isset($_SESSION['user_id'])) {
+                                    $user_id = $_SESSION['user_id'];
 
-                                        // Vérifier si l'utilisateur a déjà une équipe (rv_team_id non NULL)
-                                        $checkTeamQuery = "SELECT rv_team_id FROM rv_user WHERE id = $user_id";
-                                        $row = mysqli_fetch_assoc(mysqli_query($CONNEXION, $checkTeamQuery));
+                                    // Vérifier si l'utilisateur a déjà une équipe (rv_team_id non NULL)
+                                    $checkTeamQuery = "SELECT rv_team_id FROM rv_user WHERE id = $user_id";
+                                    $row = mysqli_fetch_assoc(mysqli_query($CONNEXION, $checkTeamQuery));
 
-                                        if ($row['rv_team_id'] === NULL) {
-                                            // L'utilisateur n'a pas d'équipe, donc il peut s'inscrire
-                                            if (isset($_POST['action']) && $_POST['action'] === 'confirm1') {
-                                                // Récupérer l'ID de l'équipe sélectionnée
-                                                $equipe_id = $_POST['equipe'];
+                                    if ($row['rv_team_id'] === NULL) {
+                                        // L'utilisateur n'a pas d'équipe, donc il peut s'inscrire
+                                        if (isset($_POST['action']) && $_POST['action'] === 'confirm1') {
+                                            // Récupérer l'ID de l'équipe sélectionnée
+                                            $equipe_id = $_POST['equipe'];
 
-                                                // Récupérer le nom de l'équipe correspondant à l'ID
-                                                $getTeamNameQuery = "SELECT Nom_equipe FROM rv_team WHERE id = $equipe_id";
-                                                $teamNameRow = mysqli_fetch_assoc(mysqli_query($CONNEXION, $getTeamNameQuery));
+                                            // Récupérer le nom de l'équipe correspondant à l'ID
+                                            $getTeamNameQuery = "SELECT Nom_equipe FROM rv_team WHERE id = $equipe_id";
+                                            $teamNameRow = mysqli_fetch_assoc(mysqli_query($CONNEXION, $getTeamNameQuery));
 
-                                                if ($teamNameRow) {
-                                                    $equipe_nom = $teamNameRow['Nom_equipe'];
+                                            if ($teamNameRow) {
+                                                $equipe_nom = $teamNameRow['Nom_equipe'];
 
-                                                    // Ajouter l'utilisateur à l'équipe dans la base de données
-                                                    $updateUserTeamQuery = "UPDATE rv_user SET rv_team_id = $equipe_id WHERE id = $user_id";
-                                                    mysqli_query($CONNEXION, $updateUserTeamQuery);
-                                                    echo "Vous avez été inscrit dans l'équipe $equipe_nom.";
-                                                }
+                                                // Ajouter l'utilisateur à l'équipe dans la base de données
+                                                $updateUserTeamQuery = "UPDATE rv_user SET rv_team_id = $equipe_id WHERE id = $user_id";
+                                                mysqli_query($CONNEXION, $updateUserTeamQuery);
+                                                echo "Vous avez été inscrit dans l'équipe $equipe_nom.";
                                             }
-                                        } else {
-                                            // L'utilisateur a déjà une équipe
-                                            echo "Vous êtes déjà inscrit dans une équipe. Si vous voulez changer d'équipe, contactez l'administrateur du site.";
                                         }
                                     } else {
-                                        echo "Connectez-vous pour vous inscrire dans une équipe.";
+                                        // L'utilisateur a déjà une équipe
+                                        echo "Vous êtes déjà inscrit dans une équipe. Si vous voulez changer d'équipe, contactez l'administrateur du site.";
                                     }
-                                    ?>
-                                    <section id="team-select">
-                                        <select name="equipe" id="equipe" required aria-describedby="equipe-desc">
-                                            <p id="equipe-desc">Sélectionnez une équipe</p>
-                                            <?php
-                                            $request = "SELECT id, Nom_equipe FROM rv_team";
-                                            $equipes = mysqli_query($CONNEXION, $request);
+                                } else {
+                                    echo "Connectez-vous pour vous inscrire dans une équipe.";
+                                }
+                                ?>
+                                <section id="team-select">
+                                    <select name="equipe" id="equipe" required aria-describedby="equipe-desc">
+                                        <p id="equipe-desc">Sélectionnez une équipe</p>
+                                        <?php
+                                        $request = "SELECT id, Nom_equipe FROM rv_team";
+                                        $equipes = mysqli_query($CONNEXION, $request);
 
-                                            while ($equipe = mysqli_fetch_assoc($equipes)) {
-                                                echo "<option value='" . $equipe['id'] . "'>" . $equipe['Nom_equipe'] . "</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <br>
-                                    <button type="submit" name="action" value="confirm1" aria-label="Confirmer l'inscription">OK</button>
-                                    <div class="infos">
-                                        <p>L'équipe n'existe pas encore ? </p>
-                                        <button class="change normal">Inscrivez-la maintenant !</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="a_team">
-                                <?php if(isset($succes)) {?>
-                                    <span class="succes"><?php echo $succes ?></span>
-                                <?php } if(isset($erreur)) {?>
-                                    <span class="erreur" ><?php echo $erreur ?></span>
-                                <?php } ?>
-                                <h2>Inscription d'une équipe</h2>
-                                <form method="POST">
-                                    <p>Nom de l’équipe :</p>
-                                    <div class="equipe">
-                                        <input type="text" name="nom_equipe" placeholder="Exemple : Les zigotos" required>
-                                    </div>
-                                    <p>Membres de l’équipe :</p>
-                                    <div class="membre">
-                                        <input type="text" name="membre1" placeholder="Exemple : Jean1@gmail.com" required>
-                                        <input type="text" name="membre2" placeholder="Exemple : Jean2@gmail.com" required>
-                                        <input type="text" name="membre3" placeholder="Exemple : Jean3@gmail.com" required>
-                                        <input type="text" name="membre4" placeholder="Exemple : Jean4@gmail.com" required>
-                                    </div>
-                                    <br>
-                                    <button id="ajouterMembres">Ajouter un membre</button>
-                                    <script src="js/addMember.min.js"></script>
-                                    <br>
-                                    <button type="submit" name="action" value="confirmation">OK</button>
-                                    <div class="infos">
-                                        <p>L'équipe existe déjà ? Si oui, </p>
-                                        <button class="change reverse">ajoute-toi à elle !</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                                        while ($equipe = mysqli_fetch_assoc($equipes)) {
+                                            echo "<option value='" . $equipe['id'] . "'>" . $equipe['Nom_equipe'] . "</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <br>
+                                <button type="submit" name="action" value="confirm1" aria-label="Confirmer l'inscription">OK</button>
+                                <div class="infos">
+                                    <p>L'équipe n'existe pas encore ? </p>
+                                    <button class="change normal">Inscrivez-la maintenant !</button>
+                                </div>
+                            </form>
+                        </section>
+                        <section class="a_team" aria-labelledby="inscription">
+                            <?php if(isset($succes)) {?>
+                                <span class="succes"><?php echo $succes ?></span>
+                            <?php } if(isset($erreur)) {?>
+                                <span class="erreur" ><?php echo $erreur ?></span>
+                            <?php } ?>
+                            <h2>Inscription d'une équipe</h2>
+                            <form method="POST">
+                                <p>Nom de l’équipe :</p>
+                                <div class="equipe">
+                                    <input type="text" name="nom_equipe" placeholder="Exemple : Les zigotos" required>
+                                </div>
+                                <p>Membres de l’équipe :</p>
+                                <div class="membre">
+                                    <input type="text" name="membre1" placeholder="Exemple : Jean1@gmail.com" required>
+                                    <input type="text" name="membre2" placeholder="Exemple : Jean2@gmail.com" required>
+                                    <input type="text" name="membre3" placeholder="Exemple : Jean3@gmail.com" required>
+                                    <input type="text" name="membre4" placeholder="Exemple : Jean4@gmail.com" required>
+                                </div>
+                                <br>
+                                <button id="ajouterMembres">Ajouter un membre</button>
+                                <script src="js/addMember.min.js"></script>
+                                <br>
+                                <button type="submit" name="action" value="confirmation">OK</button>
+                                <div class="infos">
+                                    <p>L'équipe existe déjà ? Si oui, </p>
+                                    <button class="change reverse">ajoute-toi à elle !</button>
+                                </div>
+                            </form>
+                        </section>
+                    </section>
                 <script src="js/flipcard.min.js"></script>
             </div>
         </main>
